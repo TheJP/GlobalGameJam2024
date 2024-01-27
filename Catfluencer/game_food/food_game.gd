@@ -2,6 +2,7 @@ extends Node2D
 
 
 var good_food_count = 0
+var _last_eaten: float = INF
 
 
 func _ready():
@@ -13,7 +14,17 @@ func _ready():
 		food.consume_food.connect(_on_consume_food)
 
 
+func _process(delta):
+	_last_eaten += delta
+	if _last_eaten <= 1.5:
+		if $Cat/AnimatedSprite2D.animation != "eat":
+			$Cat/AnimatedSprite2D.animation = "eat"
+	elif $Cat/AnimatedSprite2D.animation == "eat":
+		$Cat/AnimatedSprite2D.animation = "default"
+
+
 func _on_consume_food(food, is_good):
+	_last_eaten = 0
 	if not is_good:
 		Level.display_message("Diarrhea")
 		Level.finished_level(false)

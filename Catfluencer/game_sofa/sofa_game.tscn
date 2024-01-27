@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uppfr5glg0qf"]
+[gd_scene load_steps=13 format=3 uid="uid://uppfr5glg0qf"]
 
 [ext_resource type="Script" path="res://game_sofa/sofa_game.gd" id="1_6cs1u"]
 [ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="2_vkivs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b5isi8hxsgtyv" path="res://game_sofa/cat_jump.png" id="5_v2fvb"]
 [ext_resource type="Texture2D" uid="uid://c5ql724ujls8h" path="res://game_sofa/cat_sit.png" id="6_4bgto"]
 [ext_resource type="Texture2D" uid="uid://cb5q8h4xlmam0" path="res://game_sofa/background.png" id="7_67krr"]
+[ext_resource type="Texture2D" uid="uid://bwuye5fkse8rn" path="res://game_sofa/cat_sit_2.png" id="7_w2sbv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25qgs"]
 animations = [{
@@ -21,6 +22,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_4bgto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w2sbv")
 }],
 "loop": true,
 "name": &"sit",
@@ -69,6 +73,8 @@ contact_monitor = true
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_25qgs")
 animation = &"sit"
+autoplay = "sit"
+frame_progress = 0.637405
 
 [node name="CollisionShape2DSit" type="CollisionShape2D" parent="Cat"]
 position = Vector2(-1, 41)

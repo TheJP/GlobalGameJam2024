@@ -1,12 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0yxynejjnm7n"]
+[gd_scene load_steps=10 format=3 uid="uid://d0yxynejjnm7n"]
 
 [ext_resource type="Script" path="res://game_food/food_game.gd" id="1_71j51"]
 [ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="1_l25by"]
 [ext_resource type="PackedScene" uid="uid://ctg8mwg4vby5g" path="res://game_food/food.tscn" id="2_ae48x"]
 [ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="3_mevvy"]
+[ext_resource type="Texture2D" uid="uid://bouvv2w2hjbks" path="res://game_food/cat_closed.png" id="5_wmspt"]
+[ext_resource type="Texture2D" uid="uid://b1yx5tmb7bi31" path="res://game_food/cat_open.png" id="6_uu0kv"]
+[ext_resource type="Texture2D" uid="uid://2yv3l4vlv0ra" path="res://game_food/background.png" id="7_jjrtn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjnw3"]
 radius = 101.242
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwo22"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wmspt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wmspt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uu0kv")
+}],
+"loop": true,
+"name": &"eat",
+"speed": 5.0
+}]
 
 [node name="FoodGame" type="Node2D"]
 script = ExtResource("1_71j51")
@@ -14,7 +39,7 @@ script = ExtResource("1_71j51")
 [node name="Common" parent="." instance=ExtResource("1_l25by")]
 
 [node name="Food" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(877, 602)
+position = Vector2(1395, 801)
 
 [node name="Sprite2D" type="Sprite2D" parent="Food"]
 scale = Vector2(0.4, 0.4)
@@ -34,7 +59,7 @@ texture = ExtResource("3_mevvy")
 shape = SubResource("CircleShape2D_sjnw3")
 
 [node name="Food3" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(598, 313)
+position = Vector2(1525, 611)
 
 [node name="Sprite2D" type="Sprite2D" parent="Food3"]
 scale = Vector2(0.4, 0.4)
@@ -44,7 +69,7 @@ texture = ExtResource("3_mevvy")
 shape = SubResource("CircleShape2D_sjnw3")
 
 [node name="Food4" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(517, 742)
+position = Vector2(328, 472)
 
 [node name="Sprite2D" type="Sprite2D" parent="Food4"]
 scale = Vector2(0.4, 0.4)
@@ -54,7 +79,7 @@ texture = ExtResource("3_mevvy")
 shape = SubResource("CircleShape2D_sjnw3")
 
 [node name="Food5" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(1258, 679)
+position = Vector2(1152, 871)
 is_good = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Food5"]
@@ -66,7 +91,7 @@ texture = ExtResource("3_mevvy")
 shape = SubResource("CircleShape2D_sjnw3")
 
 [node name="Food6" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(924, 292)
+position = Vector2(746, 348)
 is_good = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Food6"]
@@ -76,3 +101,21 @@ texture = ExtResource("3_mevvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Food6"]
 shape = SubResource("CircleShape2D_sjnw3")
+
+[node name="Cat" type="Node2D" parent="."]
+position = Vector2(922, 602)
+scale = Vector2(0.35, 0.35)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
+sprite_frames = SubResource("SpriteFrames_rwo22")
+animation = &"eat"
+autoplay = "eat"
+frame = 1
+frame_progress = 1.0
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(940, 527)
+scale = Vector2(0.65918, 0.65918)
+texture = ExtResource("7_jjrtn")
+metadata/_edit_lock_ = true
