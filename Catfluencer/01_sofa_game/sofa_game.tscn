@@ -1,15 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://uppfr5glg0qf"]
+[gd_scene load_steps=5 format=3 uid="uid://uppfr5glg0qf"]
 
 [ext_resource type="Script" path="res://01_sofa_game/sofa_game.gd" id="1_u6uvt"]
 [ext_resource type="PackedScene" uid="uid://dgjybaqr7v1fv" path="res://01_sofa_game/slider.tscn" id="2_rfkv3"]
+[ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="3_b15qp"]
+
+[sub_resource type="Curve2D" id="Curve2D_k0fy7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 527, 760, 0, 0, 0, 0, 1018, 258.02, 0, 0, 0, 0, 1611, 758.99)
+}
+point_count = 3
 
 [node name="SofaGame" type="Node2D"]
 script = ExtResource("1_u6uvt")
 
-[node name="Cat" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(400, 400, 600, 400, 600, 600, 400, 600)
-
 [node name="Slider" parent="." instance=ExtResource("2_rfkv3")]
 position = Vector2(448, 918)
+
+[node name="Couch" type="Node2D" parent="."]
+position = Vector2(1012, 507)
+scale = Vector2(500, 500)
+
+[node name="Sprite2D" type="Sprite2D" parent="Couch"]
+modulate = Color(0.290196, 0.14902, 0.0117647, 1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_b15qp")
+metadata/_edit_lock_ = true
+
+[node name="Cat" type="Node2D" parent="."]
+position = Vector2(540, 659)
+scale = Vector2(200, 200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cat"]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_b15qp")
+metadata/_edit_lock_ = true
+
+[node name="JumpPath" type="Path2D" parent="."]
+position = Vector2(0, 7.53967)
+scale = Vector2(1, 0.990079)
+curve = SubResource("Curve2D_k0fy7")
 
 [connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
