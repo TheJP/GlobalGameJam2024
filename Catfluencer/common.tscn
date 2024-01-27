@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpa1aakkr0shm"]
 
-[node name="Background" type="Node2D"]
+[node name="Common" type="Node2D"]
 
 [node name="Screen" type="Polygon2D" parent="." groups=["screen"]]
 color = Color(0.133333, 0.133333, 0.133333, 0.54902)
