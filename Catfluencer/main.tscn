@@ -4,8 +4,4 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Screen" type="Polygon2D" parent="." groups=["screen"]]
-color = Color(0.133333, 0.133333, 0.133333, 0.54902)
-polygon = PackedVector2Array(200, 100, 1720, 100, 1720, 980, 200, 980)
-
 [node name="SofaGame" parent="." instance=ExtResource("1_j3nl1")]

@@ -4,6 +4,7 @@ extends Node2D
 signal value_changed(new_value: float)
 
 
+var disabled: bool = false
 var value: float = 0
 var max_value: float = 1
 var _left: Vector2
@@ -14,6 +15,10 @@ var _drag_origin: float
 
 
 func _input(event):
+	if disabled:
+		_dragging = false
+		return
+
 	if event is InputEventMouseButton:
 		if event.button_index != MOUSE_BUTTON_LEFT:
 			return

@@ -1,43 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://uppfr5glg0qf"]
+[gd_scene load_steps=8 format=3 uid="uid://uppfr5glg0qf"]
 
 [ext_resource type="Script" path="res://01_sofa_game/sofa_game.gd" id="1_u6uvt"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://background.tscn" id="2_kgk86"]
 [ext_resource type="PackedScene" uid="uid://dgjybaqr7v1fv" path="res://01_sofa_game/slider.tscn" id="2_rfkv3"]
 [ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="3_b15qp"]
 
-[sub_resource type="Curve2D" id="Curve2D_k0fy7"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 527, 760, 0, 0, 0, 0, 1018, 258.02, 0, 0, 0, 0, 1611, 758.99)
-}
-point_count = 3
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14oef"]
+size = Vector2(504, 500)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5jvj"]
+radius = 76.0
+height = 226.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbeuj"]
+distance = -776.0
 
 [node name="SofaGame" type="Node2D"]
 script = ExtResource("1_u6uvt")
 
+[node name="Background" parent="." instance=ExtResource("2_kgk86")]
+metadata/_edit_lock_ = true
+
 [node name="Slider" parent="." instance=ExtResource("2_rfkv3")]
 position = Vector2(448, 918)
 
-[node name="Couch" type="Node2D" parent="."]
-position = Vector2(1012, 507)
-scale = Vector2(500, 500)
+[node name="Couch" type="StaticBody2D" parent="."]
+position = Vector2(960, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="Couch"]
 modulate = Color(0.290196, 0.14902, 0.0117647, 1)
-scale = Vector2(0.01, 0.01)
+scale = Vector2(5, 5)
 texture = ExtResource("3_b15qp")
 metadata/_edit_lock_ = true
 
-[node name="Cat" type="Node2D" parent="."]
-position = Vector2(540, 659)
-scale = Vector2(200, 200)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Couch"]
+shape = SubResource("RectangleShape2D_14oef")
+
+[node name="Cat" type="RigidBody2D" parent="."]
+position = Vector2(582, 715)
+input_pickable = true
+max_contacts_reported = 2
+contact_monitor = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Cat"]
-scale = Vector2(0.01, 0.01)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_b15qp")
 metadata/_edit_lock_ = true
 
-[node name="JumpPath" type="Path2D" parent="."]
-position = Vector2(0, 7.53967)
-scale = Vector2(1, 0.990079)
-curve = SubResource("Curve2D_k0fy7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_x5jvj")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(604, 14)
+shape = SubResource("WorldBoundaryShape2D_rbeuj")
 
 [connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
+[connection signal="body_entered" from="Cat" to="." method="_on_cat_body_entered"]
+[connection signal="mouse_entered" from="Cat" to="." method="_on_cat_mouse_entered"]
+[connection signal="mouse_exited" from="Cat" to="." method="_on_cat_mouse_exited"]
