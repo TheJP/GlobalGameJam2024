@@ -1,6 +1,7 @@
 extends Node2D
 
 
+var _couch_origin: Vector2
 var _cat_hovered: bool = false
 var _cat_jumped: bool = false
 
@@ -14,7 +15,10 @@ func _input(event):
 
 		_cat_jumped = true
 		$Slider.disabled = true
-		$Cat.apply_impulse(Vector2(200, -1000))
+		$Cat/CollisionShape2DSit.set_deferred("disabled", true)
+		$Cat/CollisionShape2DJump.set_deferred("disabled", false)
+		$Cat/AnimatedSprite2D.animation = "jump"
+		$Cat.apply_impulse(Vector2(250, -1200))
 		print("jump value: ", $Slider.value)
 
 		await get_tree().create_timer(2.0, false).timeout
@@ -26,11 +30,11 @@ func _input(event):
 func _ready():
 	var new_size: Vector2 = Vector2(1.0, 0.1) * ReferenceSize.rect.size
 	$Slider.fit_into(ReferenceSize.rect.position + ReferenceSize.rect.size - new_size, new_size)
-	$Couch.global_position = ReferenceSize.rect.position + 0.5 * ReferenceSize.rect.size
+	_couch_origin = $Couch.position
 
 
 func _on_slider_value_changed(new_value):
-	$Couch.global_position = ReferenceSize.rect.position + 0.5 * ReferenceSize.rect.size
+	$Couch.position = _couch_origin
 	$Couch.global_position.x += new_value * 0.5 * ReferenceSize.rect.size.x
 
 
@@ -42,3 +46,11 @@ func _on_cat_mouse_entered():
 func _on_cat_mouse_exited():
 	_cat_hovered = false
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
+
+func _on_cat_body_entered(body):
+	if body == $Floor and _cat_jumped:
+		$Cat/AnimatedSprite2D.animation = "sit"
+		$Cat/CollisionShape2DSit.set_deferred("disabled", false)
+		$Cat/CollisionShape2DJump.set_deferred("disabled", true)
+		

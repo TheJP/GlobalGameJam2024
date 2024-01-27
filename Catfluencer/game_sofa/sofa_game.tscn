@@ -1,19 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://uppfr5glg0qf"]
+[gd_scene load_steps=12 format=3 uid="uid://uppfr5glg0qf"]
 
 [ext_resource type="Script" path="res://game_sofa/sofa_game.gd" id="1_6cs1u"]
 [ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="2_vkivs"]
 [ext_resource type="PackedScene" uid="uid://dgjybaqr7v1fv" path="res://game_sofa/slider.tscn" id="3_8r1t7"]
-[ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="4_70kan"]
+[ext_resource type="Texture2D" uid="uid://chlb85bovg1e7" path="res://game_sofa/sofa.png" id="4_jrudq"]
+[ext_resource type="Texture2D" uid="uid://b5isi8hxsgtyv" path="res://game_sofa/cat_jump.png" id="5_v2fvb"]
+[ext_resource type="Texture2D" uid="uid://c5ql724ujls8h" path="res://game_sofa/cat_sit.png" id="6_4bgto"]
+[ext_resource type="Texture2D" uid="uid://cb5q8h4xlmam0" path="res://game_sofa/background.png" id="7_67krr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_14oef"]
-size = Vector2(504, 500)
+[sub_resource type="SpriteFrames" id="SpriteFrames_25qgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_v2fvb")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4bgto")
+}],
+"loop": true,
+"name": &"sit",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5jvj"]
-radius = 76.0
-height = 226.0
+radius = 60.4003
+height = 212.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tekth"]
+radius = 60.4003
+height = 322.544
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbeuj"]
-distance = -776.0
+distance = -851.0
 
 [node name="SofaGame" type="Node2D"]
 script = ExtResource("1_6cs1u")
@@ -26,38 +49,53 @@ metadata/_edit_lock_ = true
 position = Vector2(448, 918)
 
 [node name="Couch" type="StaticBody2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(1176, 661)
 
 [node name="Sprite2D" type="Sprite2D" parent="Couch"]
-modulate = Color(0.290196, 0.14902, 0.0117647, 1)
-scale = Vector2(5, 5)
-texture = ExtResource("4_70kan")
-metadata/_edit_lock_ = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_jrudq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Couch"]
-shape = SubResource("RectangleShape2D_14oef")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Couch"]
+position = Vector2(-2.5, 55)
+polygon = PackedVector2Array(-322.5, -120, -363.5, -139, -413.5, -129, -407.5, 126, 417.5, 128, 414.5, -127, 369.5, -138, 313.5, -129, 305.5, -3, -312.5, -10)
 
 [node name="Cat" type="RigidBody2D" parent="."]
-position = Vector2(582, 715)
+position = Vector2(522, 744)
 input_pickable = true
 max_contacts_reported = 2
 contact_monitor = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Cat"]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("4_70kan")
-metadata/_edit_lock_ = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_25qgs")
+animation = &"sit"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
+[node name="CollisionShape2DSit" type="CollisionShape2D" parent="Cat"]
+position = Vector2(-1, 41)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_x5jvj")
 
+[node name="CollisionShape2DJump" type="CollisionShape2D" parent="Cat"]
+position = Vector2(33, -3)
+rotation = 1.33169
+shape = SubResource("CapsuleShape2D_tekth")
+disabled = true
+
 [node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(604, 14)
+position = Vector2(639, -2)
 shape = SubResource("WorldBoundaryShape2D_rbeuj")
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(964, 401)
+scale = Vector2(0.751302, 0.751302)
+texture = ExtResource("7_67krr")
+metadata/_edit_lock_ = true
+
 [connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
+[connection signal="body_entered" from="Cat" to="." method="_on_cat_body_entered"]
 [connection signal="mouse_entered" from="Cat" to="." method="_on_cat_mouse_entered"]
 [connection signal="mouse_exited" from="Cat" to="." method="_on_cat_mouse_exited"]

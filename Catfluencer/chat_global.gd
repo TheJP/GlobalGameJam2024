@@ -29,6 +29,8 @@ const NAME_PARTS = [
 	"murr",
 	"schnurrli",
 	"lurba",
+	"nana",
+	"sion",
 ]
 var chat_lines: int = 8
 var chat: Array[String] = []

@@ -14,7 +14,7 @@ var _finished_level = false
 
 
 func _ready():
-	Level.start_timer(10.0, disable_makeups)
+	Level.start_timer(30.0, disable_makeups)
 	for makeup: Makeup in get_tree().get_nodes_in_group("makeup"):
 		makeup.selected.connect(_on_makeup_selected)
 
@@ -37,10 +37,12 @@ func _input(event):
 		if not _pen_down or not _has_selected:
 			return
 
-		if _line_width < 15:
+		if _line_width < 50:
+			$Canvas.add_circle(_last_position, _colour, _line_width * 0.5)
 			$Canvas.add_line(_last_position, event.position, _colour, _line_width)
+			$Canvas.add_circle(event.position, _colour, _line_width * 0.5)
 		else:
-			$Canvas.add_circle(event.position, _colour, _line_width)
+			$Canvas.add_circle(event.position, _colour, _line_width * 0.5)
 		_last_position = event.position
 
 		if not _used_makeup_types.has(_type):

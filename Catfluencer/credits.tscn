@@ -8,6 +8,7 @@ script = ExtResource("1_6qcum")
 
 [node name="Common" parent="." instance=ExtResource("1_pf167")]
 show_viewer_count = false
+show_chat = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
