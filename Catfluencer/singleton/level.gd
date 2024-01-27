@@ -5,14 +5,17 @@ var remaining_time: float = 0
 var _timed_level: bool = false
 var _regular_flow = false
 var _current = 0
+var _timeout_callback: Callable
+
+
 const _levels = [
 	preload("res://game_sofa/sofa_game.tscn"),
 	preload("res://game_food/food_game.tscn"),
 	preload("res://game_unpacking/unpacking_game.tscn"),
+	preload("res://game_makeup/makeup_game.tscn"),
 	preload("res://victory.tscn"),
 	preload("res://credits.tscn"),
 ]
-
 
 
 func _process(delta):
@@ -23,6 +26,7 @@ func _process(delta):
 		remaining_time = 0
 		display_message("Too Boring")
 		finished_level(false)
+		_timeout_callback.call()
 		return
 
 	remaining_time -= delta
@@ -53,9 +57,14 @@ func finished_level(success: bool, should_sleep = true):
 	get_tree().change_scene_to_packed(_levels[_current])
 
 
-func start_timer(total_time: float):
+func start_timer(total_time: float, timeout_callback: Callable):
 	remaining_time = total_time
 	_timed_level = true
+	_timeout_callback = timeout_callback
+
+
+func stop_timer():
+	_timed_level = false
 
 
 func display_message(message: String):

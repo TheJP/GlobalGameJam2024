@@ -5,7 +5,7 @@ var good_food_count = 0
 
 
 func _ready():
-	Level.start_timer(5)
+	Level.start_timer(5, disable_foods)
 
 	for food in get_tree().get_nodes_in_group("food"):
 		if food.is_good:
@@ -14,11 +14,8 @@ func _ready():
 
 
 func _on_consume_food(food, is_good):
-	var message = get_tree().get_first_node_in_group("message")
 	if not is_good:
-		if message:
-			message.text = "Diarrhea"
-
+		Level.display_message("Diarrhea")
 		Level.finished_level(false)
 		return
 
@@ -26,7 +23,10 @@ func _on_consume_food(food, is_good):
 	good_food_count -= 1
 	
 	if good_food_count <= 0:
-		if message:
-			message.text = "Yummy!"
-
+		Level.display_message("Yummy!")
 		Level.finished_level(true)
+
+
+func disable_foods():
+	for food in get_tree().get_nodes_in_group("food"):
+		food.disable()

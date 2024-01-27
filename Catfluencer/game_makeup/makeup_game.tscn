@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cupijoe2d3fbc"]
+
+[ext_resource type="Script" path="res://game_makeup/makeup_game.gd" id="1_n2ld7"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="2_1ijii"]
+[ext_resource type="PackedScene" uid="uid://et1yihmtt1b4" path="res://game_makeup/makeup.tscn" id="3_mcoam"]
+[ext_resource type="Script" path="res://game_makeup/canvas.gd" id="4_ocf7a"]
+[ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="5_73uk2"]
+[ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="6_bo6px"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxkp5"]
+radius = 280.064
+
+[node name="MakeupGame" type="Node2D"]
+script = ExtResource("1_n2ld7")
+
+[node name="Common" parent="." instance=ExtResource("2_1ijii")]
+
+[node name="Makeup" parent="." instance=ExtResource("3_mcoam")]
+modulate = Color(0.145098, 0.490196, 0.168627, 1)
+position = Vector2(1386, 820)
+line_width = 30.0
+colour = Color(0.145098, 0.490196, 0.168627, 0.4)
+
+[node name="Makeup2" parent="." instance=ExtResource("3_mcoam")]
+modulate = Color(0.0980392, 0.0980392, 0.0980392, 1)
+position = Vector2(1515, 819)
+type = 2
+
+[node name="Makeup3" parent="." instance=ExtResource("3_mcoam")]
+modulate = Color(0.760784, 0, 0, 1)
+position = Vector2(1635, 830)
+type = 1
+line_width = 5.0
+colour = Color(0.760784, 0, 0, 1)
+
+[node name="Canvas" type="Node2D" parent="."]
+z_index = 2
+script = ExtResource("4_ocf7a")
+
+[node name="CatHead" type="Area2D" parent="."]
+position = Vector2(793, 434)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatHead"]
+shape = SubResource("CircleShape2D_bxkp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CatHead"]
+modulate = Color(0.443137, 0.443137, 0.443137, 1)
+z_index = 1
+scale = Vector2(1.028, 0.984)
+texture = ExtResource("5_73uk2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CatHead"]
+modulate = Color(0.658824, 0.658824, 0.658824, 1)
+position = Vector2(0, 343)
+scale = Vector2(5.9, 3.945)
+texture = ExtResource("6_bo6px")
+
+[connection signal="mouse_entered" from="CatHead" to="." method="_on_cat_head_mouse_entered"]
+[connection signal="mouse_exited" from="CatHead" to="." method="_on_cat_head_mouse_exited"]

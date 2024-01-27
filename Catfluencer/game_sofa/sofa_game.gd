@@ -19,10 +19,7 @@ func _input(event):
 
 		await get_tree().create_timer(2.0, false).timeout
 		var is_funny = 0.2 <= $Slider.value and $Slider.value <= 0.5
-		var message: Label = get_tree().get_first_node_in_group("message")
-		if message:
-			message.text = "Funny" if is_funny else "Not Funny"
-
+		Level.display_message("Funny" if is_funny else "Not Funny")
 		Level.finished_level(is_funny)
 
 

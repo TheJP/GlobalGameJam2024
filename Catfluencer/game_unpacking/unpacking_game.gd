@@ -4,7 +4,7 @@ var _package_count: int = 0
 
 
 func _ready():
-	Level.start_timer(6.0)
+	Level.start_timer(6.0, disable_packages)
 	var packages = get_tree().get_nodes_in_group("package")
 	_package_count = len(packages)
 	for package in packages:
