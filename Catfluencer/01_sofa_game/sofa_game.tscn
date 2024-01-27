@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://uppfr5glg0qf"]
+
+[ext_resource type="Script" path="res://01_sofa_game/sofa_game.gd" id="1_u6uvt"]
+[ext_resource type="PackedScene" uid="uid://dgjybaqr7v1fv" path="res://01_sofa_game/slider.tscn" id="2_rfkv3"]
+
+[node name="SofaGame" type="Node2D"]
+script = ExtResource("1_u6uvt")
+
+[node name="Cat" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(400, 400, 600, 400, 600, 600, 400, 600)
+
+[node name="Slider" parent="." instance=ExtResource("2_rfkv3")]
+position = Vector2(448, 918)
+
+[connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]

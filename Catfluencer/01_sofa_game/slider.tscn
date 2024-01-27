@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgjybaqr7v1fv"]
+
+[ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="1_6vmye"]
+[ext_resource type="Script" path="res://01_sofa_game/slider.gd" id="1_uocju"]
+[ext_resource type="Texture2D" uid="uid://b168l2k10fyol" path="res://01_sofa_game/slider_bg.png" id="2_2n0j7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xnkxm"]
+radius = 0.5
+
+[node name="Slider" type="Node2D"]
+script = ExtResource("1_uocju")
+
+[node name="Grabber" type="Area2D" parent="."]
+scale = Vector2(100, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabber"]
+modulate = Color(0, 0.686275, 0.00784314, 1)
+z_index = 11
+scale = Vector2(0.002, 0.002)
+texture = ExtResource("1_6vmye")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabber"]
+shape = SubResource("CircleShape2D_xnkxm")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(-51, -49)
+scale = Vector2(1000, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+z_index = 10
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.001, 0.01)
+texture = ExtResource("2_2n0j7")
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="Grabber" to="." method="_on_grabber_mouse_entered"]
+[connection signal="mouse_exited" from="Grabber" to="." method="_on_grabber_mouse_exited"]

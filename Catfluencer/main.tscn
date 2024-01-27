@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://dgll6y3fdjsv2"]
+[gd_scene load_steps=2 format=3 uid="uid://dgll6y3fdjsv2"]
+
+[ext_resource type="PackedScene" uid="uid://uppfr5glg0qf" path="res://01_sofa_game/sofa_game.tscn" id="1_j3nl1"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Screen" type="Polygon2D" parent="."]
-color = Color(0.227451, 0.227451, 0.227451, 1)
+[node name="Screen" type="Polygon2D" parent="." groups=["screen"]]
+color = Color(0.133333, 0.133333, 0.133333, 0.54902)
 polygon = PackedVector2Array(200, 100, 1720, 100, 1720, 980, 200, 980)
+
+[node name="SofaGame" parent="." instance=ExtResource("1_j3nl1")]
