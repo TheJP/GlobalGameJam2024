@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b168l2k10fyol"
-path="res://.godot/imported/slider_bg.png-c431337654b8f04d1019bef753d2ec2f.ctex"
+uid="uid://cmuc5pcwm58pu"
+path="res://.godot/imported/viewer_count.png-cec9c9fb74b349eec25d467a31926a2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_sofa/slider_bg.png"
-dest_files=["res://.godot/imported/slider_bg.png-c431337654b8f04d1019bef753d2ec2f.ctex"]
+source_file="res://common/viewer_count.png"
+dest_files=["res://.godot/imported/viewer_count.png-cec9c9fb74b349eec25d467a31926a2d.ctex"]
 
 [params]
 

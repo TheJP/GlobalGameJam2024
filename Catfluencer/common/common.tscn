@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpa1aakkr0shm"]
+
+[ext_resource type="Script" path="res://common/common.gd" id="1_3lbf3"]
+[ext_resource type="Script" path="res://chat.gd" id="2_u8lnv"]
+[ext_resource type="FontFile" uid="uid://c58w2xq0ykapv" path="res://fonts/Jockey_One/JockeyOne-Regular.ttf" id="3_82y4a"]
+[ext_resource type="Texture2D" uid="uid://cmuc5pcwm58pu" path="res://common/viewer_count.png" id="3_b551k"]
+[ext_resource type="Texture2D" uid="uid://dgw35o10popco" path="res://common/foreground.png" id="5_xgwyp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwo7b"]
+texture = ExtResource("3_b551k")
+
+[node name="Common" type="Node2D"]
+script = ExtResource("1_3lbf3")
+
+[node name="Screen" type="Polygon2D" parent="." groups=["screen"]]
+position = Vector2(-3.09944e-06, -1.19807)
+scale = Vector2(1, 1.0012)
+color = Color(0.133333, 0.133333, 0.133333, 0)
+polygon = PackedVector2Array(40, 165, 1476, 165, 1476, 999.998, 40, 999.998)
+
+[node name="CanvasLayerChat" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ChatContainer" type="MarginContainer" parent="CanvasLayerChat"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_left = 1535
+theme_override_constants/margin_top = 450
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 90
+
+[node name="Chat" type="Label" parent="CanvasLayerChat/ChatContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_82y4a")
+theme_override_font_sizes/font_size = 28
+vertical_alignment = 2
+autowrap_mode = 3
+text_overrun_behavior = 4
+script = ExtResource("2_u8lnv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer/CenterContainer" groups=["message"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
+
+[node name="ViewersContainer" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1117.0
+offset_top = 196.0
+offset_right = 1307.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gwo7b")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ViewersContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_right = 20
+
+[node name="Viewers" type="Label" parent="CanvasLayer/ViewersContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.160784, 0.164706, 0.172549, 1)
+theme_override_fonts/font = ExtResource("3_82y4a")
+theme_override_font_sizes/font_size = 35
+text = "100
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Foreground" type="Sprite2D" parent="."]
+z_index = 50
+texture = ExtResource("5_xgwyp")
+centered = false
+metadata/_edit_lock_ = true

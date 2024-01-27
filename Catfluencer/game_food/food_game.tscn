@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://d0yxynejjnm7n"]
 
 [ext_resource type="Script" path="res://game_food/food_game.gd" id="1_71j51"]
-[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="1_l25by"]
 [ext_resource type="PackedScene" uid="uid://ctg8mwg4vby5g" path="res://game_food/food.tscn" id="2_ae48x"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_ekxrd"]
 [ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="3_mevvy"]
 [ext_resource type="Texture2D" uid="uid://bouvv2w2hjbks" path="res://game_food/cat_closed.png" id="5_wmspt"]
 [ext_resource type="Texture2D" uid="uid://b1yx5tmb7bi31" path="res://game_food/cat_open.png" id="6_uu0kv"]
@@ -36,7 +36,7 @@ animations = [{
 [node name="FoodGame" type="Node2D"]
 script = ExtResource("1_71j51")
 
-[node name="Common" parent="." instance=ExtResource("1_l25by")]
+[node name="Common" parent="." instance=ExtResource("2_ekxrd")]
 
 [node name="Food" parent="." instance=ExtResource("2_ae48x")]
 position = Vector2(1395, 801)

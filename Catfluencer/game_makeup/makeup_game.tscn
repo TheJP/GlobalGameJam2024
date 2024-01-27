@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cupijoe2d3fbc"]
 
 [ext_resource type="Script" path="res://game_makeup/makeup_game.gd" id="1_n2ld7"]
-[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="2_1ijii"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_kh5if"]
 [ext_resource type="PackedScene" uid="uid://et1yihmtt1b4" path="res://game_makeup/makeup.tscn" id="3_mcoam"]
 [ext_resource type="Script" path="res://game_makeup/canvas.gd" id="4_ocf7a"]
 [ext_resource type="Texture2D" uid="uid://db2xwychf7vev" path="res://game_makeup/makeup_head.png" id="5_e7rq7"]
@@ -9,7 +9,7 @@
 [node name="MakeupGame" type="Node2D"]
 script = ExtResource("1_n2ld7")
 
-[node name="Common" parent="." instance=ExtResource("2_1ijii")]
+[node name="Common" parent="." instance=ExtResource("2_kh5if")]
 
 [node name="Makeup" parent="." instance=ExtResource("3_mcoam")]
 modulate = Color(0.145098, 0.490196, 0.168627, 1)

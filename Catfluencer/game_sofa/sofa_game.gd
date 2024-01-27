@@ -28,8 +28,6 @@ func _input(event):
 
 
 func _ready():
-	var new_size: Vector2 = Vector2(1.0, 0.1) * ReferenceSize.rect.size
-	$Slider.fit_into(ReferenceSize.rect.position + ReferenceSize.rect.size - new_size, new_size)
 	_couch_origin = $Couch.position
 
 

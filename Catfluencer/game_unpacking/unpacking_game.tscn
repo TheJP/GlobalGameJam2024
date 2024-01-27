@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://btyefsobekqyb"]
 
 [ext_resource type="Script" path="res://game_unpacking/unpacking_game.gd" id="1_1d0dx"]
-[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="1_ot01e"]
 [ext_resource type="PackedScene" uid="uid://cg07esx5ydsef" path="res://game_unpacking/package.tscn" id="2_e0cu1"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_vpgsf"]
 
 [node name="UnpackingGame" type="Node2D"]
 script = ExtResource("1_1d0dx")
 
-[node name="Common" parent="." instance=ExtResource("1_ot01e")]
+[node name="Common" parent="." instance=ExtResource("2_vpgsf")]
 
 [node name="Package" parent="." instance=ExtResource("2_e0cu1")]
 position = Vector2(948, 438)
