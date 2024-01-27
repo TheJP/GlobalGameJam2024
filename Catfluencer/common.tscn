@@ -20,6 +20,7 @@ mouse_filter = 2
 [node name="MessageLabel" type="Label" parent="CanvasLayer/CenterContainer" groups=["message"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
 
 [node name="ViewersContainer" type="GridContainer" parent="CanvasLayer"]
 unique_name_in_owner = true

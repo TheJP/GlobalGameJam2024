@@ -8,6 +8,7 @@ var _current = 0
 const _levels = [
 	preload("res://game_sofa/sofa_game.tscn"),
 	preload("res://game_food/food_game.tscn"),
+	preload("res://game_unpacking/unpacking_game.tscn"),
 	preload("res://victory.tscn"),
 	preload("res://credits.tscn"),
 ]
@@ -20,9 +21,7 @@ func _process(delta):
 
 	if remaining_time <= delta:
 		remaining_time = 0
-		var message = get_tree().get_first_node_in_group("message")
-		if message:
-			message.text = "Too Boring"
+		display_message("Too Boring")
 		finished_level(false)
 		return
 
@@ -57,3 +56,9 @@ func finished_level(success: bool, should_sleep = true):
 func start_timer(total_time: float):
 	remaining_time = total_time
 	_timed_level = true
+
+
+func display_message(message: String):
+	var label = get_tree().get_first_node_in_group("message")
+	if label:
+		label.text = message

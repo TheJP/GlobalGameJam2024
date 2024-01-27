@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg07esx5ydsef"]
+
+[ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="1_7044e"]
+[ext_resource type="Script" path="res://game_unpacking/package.gd" id="1_d0bdr"]
+[ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="2_yiqvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78f1"]
+size = Vector2(100, 100)
+
+[node name="Package" type="Area2D" groups=["package"]]
+script = ExtResource("1_d0bdr")
+
+[node name="Cardboard" type="Sprite2D" parent="."]
+modulate = Color(0.788235, 0.521569, 0.388235, 1)
+z_index = 1
+texture = ExtResource("1_7044e")
+
+[node name="Content" type="Sprite2D" parent="."]
+modulate = Color(0.172549, 0.443137, 0.137255, 1)
+scale = Vector2(0.156, 0.156)
+texture = ExtResource("2_yiqvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+shape = SubResource("RectangleShape2D_c78f1")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
