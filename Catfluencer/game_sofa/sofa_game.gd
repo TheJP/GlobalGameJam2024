@@ -22,7 +22,7 @@ func _input(event):
 		print("jump value: ", $Slider.value)
 
 		await get_tree().create_timer(2.0, false).timeout
-		var is_funny = 0.2 <= $Slider.value and $Slider.value <= 0.5
+		var is_funny = 0.37 <= $Slider.value and $Slider.value <= 0.6
 		Level.display_message("Funny" if is_funny else "Not Funny")
 		Level.finished_level(is_funny)
 
@@ -51,4 +51,3 @@ func _on_cat_body_entered(body):
 		$Cat/AnimatedSprite2D.animation = "sit"
 		$Cat/CollisionShape2DSit.set_deferred("disabled", false)
 		$Cat/CollisionShape2DJump.set_deferred("disabled", true)
-		

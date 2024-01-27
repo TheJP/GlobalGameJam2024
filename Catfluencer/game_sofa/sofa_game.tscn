@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chlb85bovg1e7" path="res://game_sofa/sofa.png" id="4_jrudq"]
 [ext_resource type="Texture2D" uid="uid://b5isi8hxsgtyv" path="res://game_sofa/cat_jump.png" id="5_v2fvb"]
 [ext_resource type="Texture2D" uid="uid://c5ql724ujls8h" path="res://game_sofa/cat_sit.png" id="6_4bgto"]
-[ext_resource type="Texture2D" uid="uid://cb5q8h4xlmam0" path="res://game_sofa/background.png" id="7_67krr"]
+[ext_resource type="Texture2D" uid="uid://bbayv21uh5h5t" path="res://game_sofa/background.png" id="7_67krr"]
 [ext_resource type="Texture2D" uid="uid://bwuye5fkse8rn" path="res://game_sofa/cat_sit_2.png" id="7_w2sbv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25qgs"]
@@ -46,25 +46,25 @@ distance = -851.0
 script = ExtResource("1_6cs1u")
 
 [node name="Common" parent="." instance=ExtResource("2_pgvyi")]
-show_viewer_count = false
+show_chat = false
 metadata/_edit_lock_ = true
 
 [node name="Slider" parent="." instance=ExtResource("3_8r1t7")]
-position = Vector2(733, 930)
+position = Vector2(1011, 957)
 
 [node name="Couch" type="StaticBody2D" parent="."]
-position = Vector2(1176, 661)
+position = Vector2(1017, 730)
 
 [node name="Sprite2D" type="Sprite2D" parent="Couch"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_jrudq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Couch"]
-position = Vector2(-2.5, 55)
+position = Vector2(-2, 56)
 polygon = PackedVector2Array(-322.5, -120, -363.5, -139, -413.5, -129, -407.5, 126, 417.5, 128, 414.5, -127, 369.5, -138, 313.5, -129, 305.5, -3, -312.5, -10)
 
 [node name="Cat" type="RigidBody2D" parent="."]
-position = Vector2(522, 744)
+position = Vector2(394, 813)
 input_pickable = true
 max_contacts_reported = 2
 contact_monitor = true
@@ -91,13 +91,13 @@ disabled = true
 position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(639, -2)
+position = Vector2(547, 63)
 shape = SubResource("WorldBoundaryShape2D_rbeuj")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(616, 593)
-scale = Vector2(0.559896, 0.559896)
+position = Vector2(758.5, 582.5)
+scale = Vector2(0.586052, 0.547059)
 texture = ExtResource("7_67krr")
 
 [connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]

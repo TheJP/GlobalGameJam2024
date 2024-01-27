@@ -1,15 +1,42 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0yxynejjnm7n"]
+[gd_scene load_steps=50 format=3 uid="uid://d0yxynejjnm7n"]
 
 [ext_resource type="Script" path="res://game_food/food_game.gd" id="1_71j51"]
 [ext_resource type="PackedScene" uid="uid://ctg8mwg4vby5g" path="res://game_food/food.tscn" id="2_ae48x"]
 [ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_ekxrd"]
-[ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="3_mevvy"]
 [ext_resource type="Texture2D" uid="uid://bouvv2w2hjbks" path="res://game_food/cat_closed.png" id="5_wmspt"]
 [ext_resource type="Texture2D" uid="uid://b1yx5tmb7bi31" path="res://game_food/cat_open.png" id="6_uu0kv"]
 [ext_resource type="Texture2D" uid="uid://2yv3l4vlv0ra" path="res://game_food/background.png" id="7_jjrtn"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sjnw3"]
-radius = 101.242
+[ext_resource type="Texture2D" uid="uid://dpdkn5kssqn76" path="res://game_food/food_1.png" id="7_y3o5a"]
+[ext_resource type="Texture2D" uid="uid://dk7y011jd8ap4" path="res://game_food/food_1_eaten.png" id="8_n8g7p"]
+[ext_resource type="Texture2D" uid="uid://klev47hnd7re" path="res://game_food/food_2.png" id="9_r2x37"]
+[ext_resource type="Texture2D" uid="uid://18jjn0c2kldx" path="res://game_food/food_2_eaten.png" id="10_3a6cl"]
+[ext_resource type="Texture2D" uid="uid://d1ohbagv0x4c5" path="res://game_food/food_3.png" id="11_8dost"]
+[ext_resource type="Texture2D" uid="uid://c22wqndsteer3" path="res://game_food/food_3_eaten.png" id="12_w5u60"]
+[ext_resource type="Texture2D" uid="uid://detep8a7utbt5" path="res://game_food/food_4.png" id="13_mxcuf"]
+[ext_resource type="Texture2D" uid="uid://x8xs2l65olr" path="res://game_food/food_4_eaten.png" id="14_lf0g2"]
+[ext_resource type="Texture2D" uid="uid://do1mxym7jmg1i" path="res://game_food/food_5.png" id="15_vie2n"]
+[ext_resource type="Texture2D" uid="uid://culg41gyfjhh3" path="res://game_food/food_5_eaten.png" id="16_ufdpv"]
+[ext_resource type="Texture2D" uid="uid://bregsmyuwmo4h" path="res://game_food/food_6.png" id="17_efljp"]
+[ext_resource type="Texture2D" uid="uid://bdscvj4p62xmc" path="res://game_food/food_6_eaten.png" id="18_yvjkf"]
+[ext_resource type="Texture2D" uid="uid://c1vsch2y4ym2g" path="res://game_food/food_7.png" id="19_f5x65"]
+[ext_resource type="Texture2D" uid="uid://b7fxgi1xk76ir" path="res://game_food/food_7_eaten.png" id="20_fhsu7"]
+[ext_resource type="Texture2D" uid="uid://cr5e4sbch3n2g" path="res://game_food/food_8.png" id="21_4tth8"]
+[ext_resource type="Texture2D" uid="uid://cxv3jg5hc6orw" path="res://game_food/food_8_eaten.png" id="22_jy61j"]
+[ext_resource type="Texture2D" uid="uid://kcmrju6nbmi1" path="res://game_food/food_9.png" id="23_1xcqd"]
+[ext_resource type="Texture2D" uid="uid://sijygbatgd53" path="res://game_food/food_9_eaten.png" id="24_l8633"]
+[ext_resource type="Texture2D" uid="uid://bef0p11wml2sl" path="res://game_food/food_10.png" id="25_0r6ui"]
+[ext_resource type="Texture2D" uid="uid://cov0fq1cqn7nv" path="res://game_food/food_10_eaten.png" id="26_aj3f0"]
+[ext_resource type="Texture2D" uid="uid://dkhklccdgw8u8" path="res://game_food/food_11.png" id="27_ysqeq"]
+[ext_resource type="Texture2D" uid="uid://bkqwq01ml4puw" path="res://game_food/food_11_eaten.png" id="28_cvbg6"]
+[ext_resource type="Texture2D" uid="uid://cyogveqnfbnva" path="res://game_food/food_12.png" id="29_hqrmj"]
+[ext_resource type="Texture2D" uid="uid://b7lldmk668haq" path="res://game_food/food_12_eaten.png" id="30_xl0t1"]
+[ext_resource type="Texture2D" uid="uid://dksaoufmlgijd" path="res://game_food/food_13.png" id="31_7jeoa"]
+[ext_resource type="Texture2D" uid="uid://dcvty20pgbl7d" path="res://game_food/food_13_eaten.png" id="32_ijvuw"]
+[ext_resource type="Texture2D" uid="uid://bttn5j5rnteq1" path="res://game_food/food_14.png" id="33_q3l42"]
+[ext_resource type="Texture2D" uid="uid://cciyfftcsuwv6" path="res://game_food/food_14_eaten.png" id="34_trkvc"]
+[ext_resource type="Texture2D" uid="uid://bk3gc3w1daxdd" path="res://game_food/food_15.png" id="35_4inyk"]
+[ext_resource type="Texture2D" uid="uid://dfhoys7s06vx0" path="res://game_food/food_15_eaten.png" id="36_w58e0"]
+[ext_resource type="Texture2D" uid="uid://do68chhrs0arb" path="res://game_food/diarrhea.png" id="37_m306g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwo22"]
 animations = [{
@@ -33,78 +60,58 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fv401"]
+radius = 60.3226
+height = 201.347
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s8otf"]
+radius = 85.9139
+height = 259.363
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htp5s"]
+radius = 85.9139
+height = 321.72
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skucd"]
+radius = 139.415
+height = 413.044
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5eq4l"]
+radius = 64.8407
+height = 208.387
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hq1gh"]
+radius = 47.7773
+height = 208.387
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcncr"]
+radius = 35.833
+height = 179.14
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06h85"]
+radius = 60.3225
+height = 242.299
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxbyw"]
+radius = 36.5591
+height = 129.681
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_14yp5"]
+radius = 27.3013
+height = 87.7419
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygqxq"]
+size = Vector2(134.801, 305.269)
+
 [node name="FoodGame" type="Node2D"]
 script = ExtResource("1_71j51")
 
 [node name="Common" parent="." instance=ExtResource("2_ekxrd")]
 
-[node name="Food" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(1395, 801)
-
-[node name="Sprite2D" type="Sprite2D" parent="Food"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_mevvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food"]
-shape = SubResource("CircleShape2D_sjnw3")
-
-[node name="Food2" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(1212, 372)
-
-[node name="Sprite2D" type="Sprite2D" parent="Food2"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_mevvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food2"]
-shape = SubResource("CircleShape2D_sjnw3")
-
-[node name="Food3" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(1525, 611)
-
-[node name="Sprite2D" type="Sprite2D" parent="Food3"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_mevvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food3"]
-shape = SubResource("CircleShape2D_sjnw3")
-
-[node name="Food4" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(328, 472)
-
-[node name="Sprite2D" type="Sprite2D" parent="Food4"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_mevvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food4"]
-shape = SubResource("CircleShape2D_sjnw3")
-
-[node name="Food5" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(1152, 871)
-is_good = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Food5"]
-modulate = Color(0.576471, 0.14902, 0.345098, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_mevvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food5"]
-shape = SubResource("CircleShape2D_sjnw3")
-
-[node name="Food6" parent="." instance=ExtResource("2_ae48x")]
-position = Vector2(746, 348)
-is_good = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Food6"]
-modulate = Color(0.403922, 0.0745098, 0.145098, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_mevvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Food6"]
-shape = SubResource("CircleShape2D_sjnw3")
-
 [node name="Cat" type="Node2D" parent="."]
-position = Vector2(922, 602)
-scale = Vector2(0.35, 0.35)
+z_index = 1
+position = Vector2(813, 577)
+scale = Vector2(0.33, 0.33)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
 sprite_frames = SubResource("SpriteFrames_rwo22")
@@ -115,7 +122,249 @@ frame_progress = 1.0
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(940, 527)
-scale = Vector2(0.65918, 0.65918)
+position = Vector2(758.5, 582.5)
+scale = Vector2(0.586052, 0.547059)
 texture = ExtResource("7_jjrtn")
-metadata/_edit_lock_ = true
+
+[node name="Food" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1291, 339)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food" index="0"]
+texture = ExtResource("7_y3o5a")
+
+[node name="Eaten" parent="Food" index="1"]
+texture = ExtResource("8_n8g7p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Food"]
+polygon = PackedVector2Array(-98.9675, -84.0861, -35.8333, -91.3979, 46.0708, -74.9463, 104.086, 82.258, -95.5547, 80.4301)
+
+[node name="Food2" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1063, 471)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food2" index="0"]
+texture = ExtResource("9_r2x37")
+
+[node name="Eaten" parent="Food2" index="1"]
+texture = ExtResource("10_3a6cl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food2"]
+position = Vector2(-5.11879, -7.31183)
+rotation = 1.69122
+shape = SubResource("CapsuleShape2D_fv401")
+
+[node name="Food3" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1392, 651)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food3" index="0"]
+texture = ExtResource("11_8dost")
+
+[node name="Eaten" parent="Food3" index="1"]
+texture = ExtResource("12_w5u60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food3"]
+position = Vector2(0.000208855, -3.6558)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_s8otf")
+
+[node name="Food4" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1310, 810)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food4" index="0"]
+texture = ExtResource("13_mxcuf")
+
+[node name="Eaten" parent="Food4" index="1"]
+texture = ExtResource("14_lf0g2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food4"]
+position = Vector2(-30.7138, -10.9679)
+shape = SubResource("CapsuleShape2D_htp5s")
+
+[node name="Food5" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1055, 908)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food5" index="0"]
+texture = ExtResource("15_vie2n")
+
+[node name="Eaten" parent="Food5" index="1"]
+texture = ExtResource("16_ufdpv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Food5"]
+polygon = PackedVector2Array(-69.9595, -122.473, 61.4282, -60.3223, 196.229, 32.9034, 68.2535, 129.785, -121.149, 27.4196, -191.109, -32.903)
+
+[node name="Food6" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(704, 892)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food6" index="0"]
+texture = ExtResource("17_efljp")
+
+[node name="Eaten" parent="Food6" index="1"]
+texture = ExtResource("18_yvjkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food6"]
+position = Vector2(-1.70634, 10.9676)
+rotation = 1.09956
+shape = SubResource("CapsuleShape2D_skucd")
+
+[node name="Food7" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1066, 576)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food7" index="0"]
+texture = ExtResource("19_f5x65")
+
+[node name="Eaten" parent="Food7" index="1"]
+texture = ExtResource("20_fhsu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food7"]
+position = Vector2(5.11921, -1.82785)
+shape = SubResource("CapsuleShape2D_5eq4l")
+
+[node name="Food8" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(994, 578)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food8" index="0"]
+texture = ExtResource("21_4tth8")
+
+[node name="Eaten" parent="Food8" index="1"]
+texture = ExtResource("22_jy61j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food8"]
+position = Vector2(-2.86102e-06, 3.65591)
+shape = SubResource("CapsuleShape2D_hq1gh")
+
+[node name="Food9" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1158, 602)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food9" index="0"]
+texture = ExtResource("23_1xcqd")
+
+[node name="Eaten" parent="Food9" index="1"]
+texture = ExtResource("24_l8633")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food9"]
+position = Vector2(-11.9443, -27.4192)
+shape = SubResource("CapsuleShape2D_pcncr")
+
+[node name="Food10" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(702, 468)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food10" index="0"]
+texture = ExtResource("25_0r6ui")
+
+[node name="Eaten" parent="Food10" index="1"]
+texture = ExtResource("26_aj3f0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food10"]
+position = Vector2(-10.2381, -1.8279)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_06h85")
+
+[node name="Food11" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(582, 484)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food11" index="0"]
+texture = ExtResource("27_ysqeq")
+
+[node name="Eaten" parent="Food11" index="1"]
+texture = ExtResource("28_cvbg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food11"]
+position = Vector2(1.70643, 1.8279)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xxbyw")
+
+[node name="Food12" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(482, 521)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food12" index="0"]
+texture = ExtResource("29_hqrmj")
+
+[node name="Eaten" parent="Food12" index="1"]
+texture = ExtResource("30_xl0t1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Food12"]
+polygon = PackedVector2Array(93.8483, -42.043, 98.9673, -29.2473, 15.357, -14.6237, 8.53168, 27.4194, -20.476, 38.3871, -76.785, 36.5591, -88.7293, 10.9678, -92.142, -23.7634, -46.071, -53.0107, -30.714, -53.0107, 17.0634, -32.9032)
+
+[node name="Food13" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(407, 559)
+scale = Vector2(0.586052, 0.547059)
+is_good = false
+
+[node name="NotEaten" parent="Food13" index="0"]
+texture = ExtResource("31_7jeoa")
+
+[node name="Eaten" parent="Food13" index="1"]
+texture = ExtResource("32_ijvuw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food13"]
+position = Vector2(-17.0632, 0.000163317)
+shape = SubResource("CapsuleShape2D_14yp5")
+
+[node name="Food14" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(334, 544)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food14" index="0"]
+texture = ExtResource("33_q3l42")
+
+[node name="Eaten" parent="Food14" index="1"]
+texture = ExtResource("34_trkvc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Food14"]
+polygon = PackedVector2Array(-51.19, -82.2581, 69.9597, -107.849, 71.666, 54.8387, -49.4836, 106.021)
+
+[node name="Food15" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1415, 305)
+scale = Vector2(0.586052, 0.547059)
+
+[node name="NotEaten" parent="Food15" index="0"]
+texture = ExtResource("35_4inyk")
+
+[node name="Eaten" parent="Food15" index="1"]
+texture = ExtResource("36_w58e0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food15"]
+position = Vector2(36.686, -0.913879)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ygqxq")
+
+[node name="Diarrhea" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(741, 673)
+rotation = 0.23911
+scale = Vector2(0.579655, 0.579655)
+texture = ExtResource("37_m306g")
+
+[editable path="Food"]
+[editable path="Food2"]
+[editable path="Food3"]
+[editable path="Food4"]
+[editable path="Food5"]
+[editable path="Food6"]
+[editable path="Food7"]
+[editable path="Food8"]
+[editable path="Food9"]
+[editable path="Food10"]
+[editable path="Food11"]
+[editable path="Food12"]
+[editable path="Food13"]
+[editable path="Food14"]
+[editable path="Food15"]

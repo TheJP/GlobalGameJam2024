@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbayv21uh5h5t"
-path="res://.godot/imported/background.png-7c2ffd1aa0311c08cde554a4b1d027bb.ctex"
+uid="uid://kcmrju6nbmi1"
+path="res://.godot/imported/food_9.png-c4424272729635cdb43ae412385f7d0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_sofa/background.png"
-dest_files=["res://.godot/imported/background.png-7c2ffd1aa0311c08cde554a4b1d027bb.ctex"]
+source_file="res://game_food/food_9.png"
+dest_files=["res://.godot/imported/food_9.png-c4424272729635cdb43ae412385f7d0f.ctex"]
 
 [params]
 

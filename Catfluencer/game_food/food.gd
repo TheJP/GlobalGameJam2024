@@ -18,6 +18,8 @@ func _input(event):
 			return
 
 		_consumed = true
+		$Eaten.visible = true
+		$NotEaten.visible = false
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		consume_food.emit(self, is_good)
 

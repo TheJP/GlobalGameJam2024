@@ -6,7 +6,7 @@ var _last_eaten: float = INF
 
 
 func _ready():
-	Level.start_timer(5, disable_foods)
+	Level.start_timer(10.0, disable_foods)
 
 	for food in get_tree().get_nodes_in_group("food"):
 		if food.is_good:
@@ -26,11 +26,12 @@ func _process(delta):
 func _on_consume_food(food, is_good):
 	_last_eaten = 0
 	if not is_good:
-		Level.display_message("Diarrhea")
+		#Level.display_message("Diarrhea")
+		$Diarrhea.visible = true
 		Level.finished_level(false)
 		return
 
-	food.get_node("Sprite2D").visible = false
+	#food.get_node("Sprite2D").visible = false
 	good_food_count -= 1
 	
 	if good_food_count <= 0:
