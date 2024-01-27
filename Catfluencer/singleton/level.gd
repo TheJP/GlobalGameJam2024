@@ -5,6 +5,7 @@ var _regular_flow = false
 var _current = 0
 const _levels = [
 	preload("res://01_sofa_game/sofa_game.tscn"),
+	preload("res://victory.tscn"),
 	preload("res://credits.tscn"),
 ]
 
