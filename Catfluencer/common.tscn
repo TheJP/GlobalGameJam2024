@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpa1aakkr0shm"]
+[gd_scene load_steps=3 format=3 uid="uid://bpa1aakkr0shm"]
 
 [ext_resource type="Script" path="res://common.gd" id="1_6mjva"]
+[ext_resource type="Script" path="res://chat.gd" id="2_babob"]
 
 [node name="Common" type="Node2D"]
 script = ExtResource("1_6mjva")
@@ -8,6 +9,29 @@ script = ExtResource("1_6mjva")
 [node name="Screen" type="Polygon2D" parent="." groups=["screen"]]
 color = Color(0.133333, 0.133333, 0.133333, 0.54902)
 polygon = PackedVector2Array(200, 100, 1720, 100, 1720, 980, 200, 980)
+
+[node name="CanvasLayerChat" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ChatContainer" type="MarginContainer" parent="CanvasLayerChat"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_left = 1300
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 150
+
+[node name="Chat" type="Label" parent="CanvasLayerChat/ChatContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 2
+autowrap_mode = 3
+text_overrun_behavior = 4
+script = ExtResource("2_babob")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
