@@ -5,6 +5,8 @@ var good_food_count = 0
 
 
 func _ready():
+	Level.start_timer(5)
+
 	for food in get_tree().get_nodes_in_group("food"):
 		if food.is_good:
 			good_food_count += 1

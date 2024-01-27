@@ -8,6 +8,7 @@
 script = ExtResource("1_kn72g")
 
 [node name="Common" parent="." instance=ExtResource("2_vef3s")]
+show_viewer_count = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

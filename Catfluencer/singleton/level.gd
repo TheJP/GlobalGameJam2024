@@ -1,6 +1,8 @@
 extends Node
 
 
+var remaining_time: float = 0
+var _timed_level: bool = false
 var _regular_flow = false
 var _current = 0
 const _levels = [
@@ -11,13 +13,32 @@ const _levels = [
 ]
 
 
+
+func _process(delta):
+	if not _timed_level:
+		return
+
+	if remaining_time <= delta:
+		remaining_time = 0
+		var message = get_tree().get_first_node_in_group("message")
+		if message:
+			message.text = "Too Boring"
+		finished_level(false)
+		return
+
+	remaining_time -= delta
+
+
 func start():
 	_regular_flow = true
 	_current = 0
+	_timed_level = false
 	get_tree().change_scene_to_packed(_levels[_current])
 
 
 func finished_level(success: bool, should_sleep = true):
+	_timed_level = false
+
 	if should_sleep:
 		await get_tree().create_timer(1.0, false).timeout
 
@@ -31,3 +52,8 @@ func finished_level(success: bool, should_sleep = true):
 		_current = 0
 
 	get_tree().change_scene_to_packed(_levels[_current])
+
+
+func start_timer(total_time: float):
+	remaining_time = total_time
+	_timed_level = true
