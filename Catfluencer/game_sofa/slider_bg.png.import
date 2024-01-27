@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b168l2k10fyol"
-path="res://.godot/imported/slider_bg.png-817522e21b63b9e387a235aa4adc4969.ctex"
+path="res://.godot/imported/slider_bg.png-c431337654b8f04d1019bef753d2ec2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_sofa_game/slider_bg.png"
-dest_files=["res://.godot/imported/slider_bg.png-817522e21b63b9e387a235aa4adc4969.ctex"]
+source_file="res://game_sofa/slider_bg.png"
+dest_files=["res://.godot/imported/slider_bg.png-c431337654b8f04d1019bef753d2ec2f.ctex"]
 
 [params]
 

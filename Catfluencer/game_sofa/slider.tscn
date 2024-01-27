@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgjybaqr7v1fv"]
 
 [ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="1_6vmye"]
-[ext_resource type="Script" path="res://01_sofa_game/slider.gd" id="1_uocju"]
-[ext_resource type="Texture2D" uid="uid://b168l2k10fyol" path="res://01_sofa_game/slider_bg.png" id="2_2n0j7"]
+[ext_resource type="Script" path="res://game_sofa/slider.gd" id="1_uocju"]
+[ext_resource type="Texture2D" uid="uid://b168l2k10fyol" path="res://game_sofa/slider_bg.png" id="2_2n0j7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnkxm"]
 radius = 0.5

@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0yxynejjnm7n"]
+
+[ext_resource type="Script" path="res://game_food/food_game.gd" id="1_71j51"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="1_l25by"]
+[ext_resource type="PackedScene" uid="uid://ctg8mwg4vby5g" path="res://game_food/food.tscn" id="2_ae48x"]
+[ext_resource type="Texture2D" uid="uid://dfyvg0pxkyk4d" path="res://circle.png" id="3_mevvy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjnw3"]
+radius = 101.242
+
+[node name="FoodGame" type="Node2D"]
+script = ExtResource("1_71j51")
+
+[node name="Common" parent="." instance=ExtResource("1_l25by")]
+
+[node name="Food" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(877, 602)
+
+[node name="Sprite2D" type="Sprite2D" parent="Food"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_mevvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food"]
+shape = SubResource("CircleShape2D_sjnw3")
+
+[node name="Food2" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1212, 372)
+
+[node name="Sprite2D" type="Sprite2D" parent="Food2"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_mevvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food2"]
+shape = SubResource("CircleShape2D_sjnw3")
+
+[node name="Food3" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(598, 313)
+
+[node name="Sprite2D" type="Sprite2D" parent="Food3"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_mevvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food3"]
+shape = SubResource("CircleShape2D_sjnw3")
+
+[node name="Food4" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(517, 742)
+
+[node name="Sprite2D" type="Sprite2D" parent="Food4"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_mevvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food4"]
+shape = SubResource("CircleShape2D_sjnw3")
+
+[node name="Food5" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(1258, 679)
+is_good = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Food5"]
+modulate = Color(0.576471, 0.14902, 0.345098, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_mevvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food5"]
+shape = SubResource("CircleShape2D_sjnw3")
+
+[node name="Food6" parent="." instance=ExtResource("2_ae48x")]
+position = Vector2(924, 292)
+is_good = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Food6"]
+modulate = Color(0.403922, 0.0745098, 0.145098, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_mevvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food6"]
+shape = SubResource("CircleShape2D_sjnw3")

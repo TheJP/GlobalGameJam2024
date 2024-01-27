@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://uppfr5glg0qf"]
 
-[ext_resource type="Script" path="res://01_sofa_game/sofa_game.gd" id="1_u6uvt"]
-[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="2_jxbj8"]
-[ext_resource type="PackedScene" uid="uid://dgjybaqr7v1fv" path="res://01_sofa_game/slider.tscn" id="2_rfkv3"]
-[ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="3_b15qp"]
+[ext_resource type="Script" path="res://game_sofa/sofa_game.gd" id="1_6cs1u"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common.tscn" id="2_vkivs"]
+[ext_resource type="PackedScene" uid="uid://dgjybaqr7v1fv" path="res://game_sofa/slider.tscn" id="3_8r1t7"]
+[ext_resource type="Texture2D" uid="uid://duymb8xqpfysw" path="res://square.png" id="4_70kan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14oef"]
 size = Vector2(504, 500)
@@ -16,12 +16,12 @@ height = 226.0
 distance = -776.0
 
 [node name="SofaGame" type="Node2D"]
-script = ExtResource("1_u6uvt")
+script = ExtResource("1_6cs1u")
 
-[node name="Common" parent="." instance=ExtResource("2_jxbj8")]
+[node name="Common" parent="." instance=ExtResource("2_vkivs")]
 metadata/_edit_lock_ = true
 
-[node name="Slider" parent="." instance=ExtResource("2_rfkv3")]
+[node name="Slider" parent="." instance=ExtResource("3_8r1t7")]
 position = Vector2(448, 918)
 
 [node name="Couch" type="StaticBody2D" parent="."]
@@ -30,7 +30,7 @@ position = Vector2(960, 540)
 [node name="Sprite2D" type="Sprite2D" parent="Couch"]
 modulate = Color(0.290196, 0.14902, 0.0117647, 1)
 scale = Vector2(5, 5)
-texture = ExtResource("3_b15qp")
+texture = ExtResource("4_70kan")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Couch"]
@@ -44,7 +44,7 @@ contact_monitor = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Cat"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_b15qp")
+texture = ExtResource("4_70kan")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
