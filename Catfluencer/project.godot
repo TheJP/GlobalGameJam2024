@@ -21,6 +21,7 @@ run/size/viewport_width=1920
 [autoload]
 
 ReferenceSize="*res://singleton/reference_size.gd"
+Level="*res://singleton/level.gd"
 
 [display]
 

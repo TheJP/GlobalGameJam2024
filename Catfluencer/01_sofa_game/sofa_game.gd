@@ -15,9 +15,15 @@ func _input(event):
 		_cat_jumped = true
 		$Slider.disabled = true
 		$Cat.apply_impulse(Vector2(200, -1000))
+		print("jump value: ", $Slider.value)
 
 		await get_tree().create_timer(2.0, false).timeout
-		print("game over")
+		var is_funny = 0.2 <= $Slider.value and $Slider.value <= 0.5
+		var message: Label = get_tree().get_first_node_in_group("message")
+		if message:
+			message.text = "Funny" if is_funny else "Not Funny"
+
+		Level.finished_level(is_funny)
 
 
 func _ready():
@@ -39,9 +45,3 @@ func _on_cat_mouse_entered():
 func _on_cat_mouse_exited():
 	_cat_hovered = false
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-
-
-func _on_cat_body_entered(body):
-	if body == $Floor and _cat_jumped:
-		pass
-		#print("hit floor")
