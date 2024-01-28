@@ -45,8 +45,10 @@ func start():
 func finished_level(success: bool, should_sleep = true):
 	_timed_level = false
 	if success:
+		Audio.play_neutral_sound()
 		Reactions.win()
 	else:
+		Audio.play_sad_sound()
 		Reactions.lose()
 
 	if should_sleep:

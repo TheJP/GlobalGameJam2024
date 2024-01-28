@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s63it3xm14np"
+path="res://.godot/imported/neutral (19).wav-067840b03b71d779fd0dfe45dd3db9cb.sample"
+
+[deps]
+
+source_file="res://sounds/neutral (19).wav"
+dest_files=["res://.godot/imported/neutral (19).wav-067840b03b71d779fd0dfe45dd3db9cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

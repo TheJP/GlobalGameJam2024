@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8gkc4jbno26g"
-path="res://.godot/imported/reaction_polite .png-d1a30898d176cba062dd7c75ed05479e.ctex"
+path="res://.godot/imported/reaction_polite.png-3a076628e26532c94d7ca2f83b63a7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/reaction_polite .png"
-dest_files=["res://.godot/imported/reaction_polite .png-d1a30898d176cba062dd7c75ed05479e.ctex"]
+source_file="res://common/reaction_polite.png"
+dest_files=["res://.godot/imported/reaction_polite.png-3a076628e26532c94d7ca2f83b63a7d7.ctex"]
 
 [params]
 

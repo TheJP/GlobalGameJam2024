@@ -11,6 +11,10 @@
 script = ExtResource("1_n2ld7")
 
 [node name="Common" parent="." instance=ExtResource("2_kh5if")]
+show_viewer_count = true
+show_chat = true
+show_webcam = true
+show_controls = true
 
 [node name="Makeup" parent="." instance=ExtResource("3_mcoam")]
 modulate = Color(0.145098, 0.490196, 0.168627, 1)

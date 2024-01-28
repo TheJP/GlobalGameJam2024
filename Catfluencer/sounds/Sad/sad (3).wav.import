@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jvvpvitomxgg"
+path="res://.godot/imported/sad (3).wav-b536b40b45c129af2043ca3951faa36c.sample"
+
+[deps]
+
+source_file="res://sounds/Sad/sad (3).wav"
+dest_files=["res://.godot/imported/sad (3).wav-b536b40b45c129af2043ca3951faa36c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
