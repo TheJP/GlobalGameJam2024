@@ -8,7 +8,6 @@ func _ready():
 	var packages = get_tree().get_nodes_in_group("package")
 	_package_count = len(packages)
 	for package in packages:
-		package.package_layers = randi_range(1, 4)
 		package.destroyed_content.connect(_on_package_destroyed_content)
 		package.finished_package.connect(_on_package_finished_package)
 

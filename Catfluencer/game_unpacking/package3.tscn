@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=3 uid="uid://ngx85mqwyv1u"]
+
+[ext_resource type="Script" path="res://game_unpacking/package.gd" id="1_vykty"]
+[ext_resource type="Texture2D" uid="uid://cdfgvv4tvywt0" path="res://game_unpacking/unpacking_game_8.png" id="2_omend"]
+[ext_resource type="Texture2D" uid="uid://db2pco7sd1mct" path="res://game_unpacking/unpacking_game_9.png" id="3_3jchf"]
+[ext_resource type="Texture2D" uid="uid://bad31l6us5si7" path="res://game_unpacking/unpacking_game_10.png" id="4_ddl1h"]
+[ext_resource type="Texture2D" uid="uid://dj025xvceox51" path="res://game_unpacking/unpacking_game_11.png" id="5_cke7g"]
+[ext_resource type="Texture2D" uid="uid://cb2fhvvyjt3kt" path="res://game_unpacking/unpacking_game_12.png" id="6_tb8nq"]
+[ext_resource type="Texture2D" uid="uid://cxhkk8sseyrc8" path="res://game_unpacking/unpacking_game_destroyed_3.png" id="7_0wpij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c78f1"]
+size = Vector2(440, 394)
+
+[node name="Package" type="Area2D" groups=["package"]]
+script = ExtResource("1_vykty")
+textures = Array[Texture]([ExtResource("2_omend"), ExtResource("3_3jchf"), ExtResource("4_ddl1h"), ExtResource("5_cke7g"), ExtResource("6_tb8nq"), ExtResource("7_0wpij")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_c78f1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_omend")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

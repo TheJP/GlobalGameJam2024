@@ -6,10 +6,15 @@ signal finished_package(package: Node2D)
 signal destroyed_content(package: Node2D)
 
 
-@export var package_layers: int = 3
+@export var textures: Array[Texture] = []
+var package_layer = 0
 var has_destroyed_content: bool = false
 var _hovered = false
 var _disabled = false
+
+
+func _process(delta):
+	$Sprite2D.texture = textures[package_layer]
 
 
 func _input(event):
@@ -19,20 +24,18 @@ func _input(event):
 		if has_destroyed_content or not _hovered or _disabled:
 			return
 
-		if package_layers <= 0:
+		if package_layer + 1 >= len(textures):
+			return
+		package_layer += 1
+
+		if package_layer + 1 >= len(textures):
 			has_destroyed_content = true
-			$Content.modulate = Color.FIREBRICK
-			_hovered = false
-			Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+			unhover()
 			destroyed_content.emit(self)
 			return
 
-		package_layers -= 1
-		if package_layers <= 0:
-			$Cardboard.visible = false
+		if package_layer + 2 == len(textures):
 			finished_package.emit(self)
-		else:
-			$Cardboard.scale *= 0.5
 
 
 
@@ -41,6 +44,7 @@ func _on_mouse_entered():
 		return
 
 	_hovered = true
+	scale = Vector2(1.1, 1.1)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 
@@ -48,10 +52,15 @@ func _on_mouse_exited():
 	if has_destroyed_content or _disabled:
 		return
 
-	_hovered = false
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	unhover()
 
 
 func disable():
 	_disabled = true
+	unhover()
+
+
+func unhover():
+	_hovered = false
+	scale = Vector2(1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

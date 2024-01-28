@@ -92,7 +92,6 @@ text_overrun_behavior = 4
 script = ExtResource("2_u8lnv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(1920, 1080)
