@@ -29,6 +29,9 @@ func _ready():
 	%Emotion.visible = show_webcam
 	%Mic.visible = show_webcam
 	%ControlsContainer.visible = show_controls
+	%Volume.value = Audio.get_volume()
+	%SpeakerButton.visible = not Audio.is_mute()
+	%MuteButton.visible = Audio.is_mute()
 	Level.show_boring.connect(func(): $Boring.visible = true)
 	Audio.on_play_neutral_sound.connect(play_neutral_sound)
 	Audio.on_play_sad_sound.connect(play_sad_sound)
@@ -85,3 +88,19 @@ func play_neutral_sound(player: AudioStreamPlayer):
 func play_sad_sound(player: AudioStreamPlayer):
 	player.stream = sad_sounds[randi() % len(sad_sounds)]
 	player.play()
+
+
+func _on_speaker_button_pressed():
+	Audio.set_mute(true)
+	%SpeakerButton.visible = false
+	%MuteButton.visible = true
+
+
+func _on_muted_button_pressed():
+	Audio.set_mute(false)
+	%SpeakerButton.visible = true
+	%MuteButton.visible = false
+
+
+func _on_volume_value_changed(value):
+	Audio.set_volume(value)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bpa1aakkr0shm"]
+[gd_scene load_steps=80 format=3 uid="uid://bpa1aakkr0shm"]
 
 [ext_resource type="Script" path="res://common/common.gd" id="1_3lbf3"]
 [ext_resource type="AudioStream" uid="uid://d3162l2skp8qf" path="res://sounds/neutral (1).wav" id="2_2x0w7"]
@@ -26,7 +26,6 @@
 [ext_resource type="AudioStream" uid="uid://etx3ntprhy4h" path="res://sounds/neutral (10).wav" id="11_f1o6b"]
 [ext_resource type="Texture2D" uid="uid://jrrxaqj7uaep" path="res://common/menu/Pause_Hover.png" id="12_6j2lb"]
 [ext_resource type="AudioStream" uid="uid://2gy3i22oq3uf" path="res://sounds/neutral (11).wav" id="12_34q1s"]
-[ext_resource type="Texture2D" uid="uid://ny380yb81im4" path="res://common/menu/Volume_whole.png" id="12_o7vmf"]
 [ext_resource type="Texture2D" uid="uid://f6s273rmjrbs" path="res://common/menu/Setting.png" id="13_eotb7"]
 [ext_resource type="AudioStream" uid="uid://b0gibo7beii1e" path="res://sounds/neutral (12).wav" id="13_mbqn3"]
 [ext_resource type="AudioStream" uid="uid://dertymvk3tm7o" path="res://sounds/neutral (13).wav" id="14_gr2vx"]
@@ -71,9 +70,26 @@
 [ext_resource type="AudioStream" uid="uid://bw1gya5j52em6" path="res://sounds/Sad/sad (7).wav" id="42_lup5f"]
 [ext_resource type="AudioStream" uid="uid://dkf8n33isahnb" path="res://sounds/Sad/sad (8).wav" id="43_ycqam"]
 [ext_resource type="AudioStream" uid="uid://ds80vaoif0teb" path="res://sounds/Sad/sad (9).wav" id="44_4cnof"]
+[ext_resource type="Texture2D" uid="uid://cvsbcorb7ww8l" path="res://common/menu/Volume_speaker_Hover.png" id="57_nuufb"]
+[ext_resource type="Texture2D" uid="uid://btr2x01u0es64" path="res://common/menu/Volume_speaker_Muted_Base.png" id="58_knp1e"]
+[ext_resource type="Texture2D" uid="uid://ddcjyxqcherge" path="res://common/menu/Volume_speaker_Muted_Hover.png" id="59_oxvmd"]
+[ext_resource type="Texture2D" uid="uid://c4umik572qe68" path="res://common/menu/Volume_Circle.png" id="60_2p2s4"]
+[ext_resource type="Texture2D" uid="uid://bhoyvub4qkkjy" path="res://common/menu/Volume_Circle_drag.png" id="61_iqa5y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwo7b"]
 texture = ExtResource("3_b551k")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ieesr"]
+color = Color(0.160784, 0.164706, 0.172549, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rqm2h"]
+color = Color(0.160784, 0.164706, 0.172549, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_62v66"]
+color = Color(0.27451, 0.278431, 0.294118, 1)
+thickness = 5
 
 [node name="Common" type="Node2D"]
 script = ExtResource("1_3lbf3")
@@ -221,7 +237,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/h_separation = 9
-columns = 8
+columns = 9
 
 [node name="Spacer" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(5, 0)
@@ -248,17 +264,35 @@ texture_normal = ExtResource("11_5qsvj")
 texture_hover = ExtResource("12_6j2lb")
 
 [node name="SpeakerButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
-visible = false
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_dmx7e")
-texture_hover = ExtResource("10_13ebv")
+texture_hover = ExtResource("57_nuufb")
 
-[node name="VolumeButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+[node name="MuteButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("12_o7vmf")
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("58_knp1e")
+texture_hover = ExtResource("59_oxvmd")
+
+[node name="Volume" type="HSlider" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_icons/grabber = ExtResource("60_2p2s4")
+theme_override_icons/grabber_highlight = ExtResource("61_iqa5y")
+theme_override_styles/slider = SubResource("StyleBoxLine_ieesr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_rqm2h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_62v66")
+max_value = 1.0
+step = 0.01
 
 [node name="Spacer2" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
 layout_mode = 2
@@ -379,6 +413,9 @@ texture = ExtResource("10_vptwh")
 
 [connection signal="pressed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/SpeakerButton" to="." method="_on_speaker_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/MuteButton" to="." method="_on_muted_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
