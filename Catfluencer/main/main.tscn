@@ -12,6 +12,7 @@ script = ExtResource("1_kn72g")
 show_viewer_count = false
 show_chat = false
 show_webcam = false
+show_controls = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

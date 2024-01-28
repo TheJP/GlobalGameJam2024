@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpa1aakkr0shm"]
+[gd_scene load_steps=30 format=3 uid="uid://bpa1aakkr0shm"]
 
 [ext_resource type="Script" path="res://common/common.gd" id="1_3lbf3"]
 [ext_resource type="Texture2D" uid="uid://7bgulp21q120" path="res://common/cam_background.png" id="2_65rlq"]
@@ -9,7 +9,25 @@
 [ext_resource type="Texture2D" uid="uid://b6us8aunafgkk" path="res://common/reaction_neutral .png" id="4_u40u2"]
 [ext_resource type="Texture2D" uid="uid://doo48phm3bs7p" path="res://common/reaction_micro.png" id="5_0yepu"]
 [ext_resource type="Texture2D" uid="uid://dgw35o10popco" path="res://common/foreground.png" id="5_xgwyp"]
+[ext_resource type="Texture2D" uid="uid://dllmeeebc8qf" path="res://common/menu/Play.png" id="9_fousb"]
+[ext_resource type="Texture2D" uid="uid://gojfcjdp8pbt" path="res://common/menu/Play_Hover.png" id="10_13ebv"]
 [ext_resource type="Texture2D" uid="uid://dwm4i305b7ml3" path="res://common/text_boring.png" id="10_vptwh"]
+[ext_resource type="Texture2D" uid="uid://30yxtbhkdbti" path="res://common/menu/Pause_Base.png" id="11_5qsvj"]
+[ext_resource type="Texture2D" uid="uid://flqfyy2s14jv" path="res://common/menu/Volume_speaker.png" id="11_dmx7e"]
+[ext_resource type="Texture2D" uid="uid://jrrxaqj7uaep" path="res://common/menu/Pause_Hover.png" id="12_6j2lb"]
+[ext_resource type="Texture2D" uid="uid://ny380yb81im4" path="res://common/menu/Volume_whole.png" id="12_o7vmf"]
+[ext_resource type="Texture2D" uid="uid://f6s273rmjrbs" path="res://common/menu/Setting.png" id="13_eotb7"]
+[ext_resource type="Texture2D" uid="uid://cf0ftqbfi63f6" path="res://common/menu/Miniplayer.png" id="14_teqyb"]
+[ext_resource type="Texture2D" uid="uid://dqq5xdeispser" path="res://common/menu/Fullscreen.png" id="15_f86bk"]
+[ext_resource type="Texture2D" uid="uid://c4147ygcifglc" path="res://common/menu/Menu_Background.png" id="19_o4hyk"]
+[ext_resource type="Texture2D" uid="uid://dcpuqscayh644" path="res://common/menu/Menu_Close_Base.png" id="20_gm4un"]
+[ext_resource type="Texture2D" uid="uid://dh3lwctac7q0r" path="res://common/menu/Menu_Close_Hover.png" id="21_jgeqg"]
+[ext_resource type="Texture2D" uid="uid://ccnpn4l4m5t8q" path="res://common/menu/Menu_Resume_Base.png" id="21_nclv3"]
+[ext_resource type="Texture2D" uid="uid://dxv6f6rhe405r" path="res://common/menu/Menu_Resume_Hover.png" id="22_iihpg"]
+[ext_resource type="Texture2D" uid="uid://drohda3b53mj5" path="res://common/menu/Menu_Restart_Base.png" id="23_xnfo6"]
+[ext_resource type="Texture2D" uid="uid://beiulpxmbohs2" path="res://common/menu/Menu_Restart_Hover.png" id="24_iuadk"]
+[ext_resource type="Texture2D" uid="uid://bdypcdf16i0ig" path="res://common/menu/Menu_Quit_Base.png" id="25_dpwhh"]
+[ext_resource type="Texture2D" uid="uid://bvebxuxrq0n7y" path="res://common/menu/Menu_Quit_Hover.png" id="26_r476o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwo7b"]
 texture = ExtResource("3_b551k")
@@ -20,7 +38,7 @@ script = ExtResource("1_3lbf3")
 [node name="Screen" type="Polygon2D" parent="." groups=["screen"]]
 position = Vector2(-3.09944e-06, -1.19807)
 scale = Vector2(1, 1.0012)
-color = Color(0.133333, 0.133333, 0.133333, 0)
+color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(40, 165, 1476, 165, 1476, 999.998, 40, 999.998)
 
 [node name="CanvasLayerWebcam" type="CanvasLayer" parent="."]
@@ -129,6 +147,173 @@ text = "100
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ControlsContainer" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 164.0
+offset_right = 1476.0
+offset_bottom = 1000.0
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ControlsContainer"]
+layout_mode = 2
+offset_right = 1436.0
+offset_bottom = 836.0
+mouse_filter = 2
+theme_override_constants/v_separation = 9
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ControlsContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 9
+columns = 8
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_fousb")
+texture_hover = ExtResource("10_13ebv")
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_5qsvj")
+texture_hover = ExtResource("12_6j2lb")
+
+[node name="SpeakerButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_dmx7e")
+texture_hover = ExtResource("10_13ebv")
+
+[node name="VolumeButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("12_o7vmf")
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="SettingsButton" type="TextureRect" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("13_eotb7")
+
+[node name="DropoutButton" type="TextureRect" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("14_teqyb")
+
+[node name="FullscreenButton" type="TextureRect" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("15_f86bk")
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ControlsContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PauseMenu" type="CenterContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+offset_left = 40.0
+offset_top = 164.0
+offset_right = 1476.0
+offset_bottom = 1000.0
+
+[node name="PanelContainer" type="Control" parent="CanvasLayer/PauseMenu"]
+custom_minimum_size = Vector2(512, 504)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/PauseMenu/PanelContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 504.0
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/PauseMenu/PanelContainer/Control"]
+layout_mode = 2
+offset_top = 29.0
+offset_right = 484.0
+offset_bottom = 505.0
+texture = ExtResource("19_o4hyk")
+
+[node name="CloseButton" type="TextureButton" parent="CanvasLayer/PauseMenu/PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("20_gm4un")
+texture_hover = ExtResource("21_jgeqg")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/PanelContainer/Control"]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 484.0
+offset_bottom = 505.0
+theme_override_constants/separation = 32
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("21_nclv3")
+texture_hover = ExtResource("22_iihpg")
+stretch_mode = 5
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("23_xnfo6")
+texture_hover = ExtResource("24_iuadk")
+stretch_mode = 5
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("25_dpwhh")
+texture_hover = ExtResource("26_r476o")
+stretch_mode = 5
+
 [node name="Foreground" type="Sprite2D" parent="."]
 z_index = 50
 texture = ExtResource("5_xgwyp")
@@ -142,3 +327,10 @@ position = Vector2(758, 596)
 rotation = 0.418879
 scale = Vector2(1.09411, 1.09411)
 texture = ExtResource("10_vptwh")
+
+[connection signal="pressed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlsContainer/GridContainer/GridContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

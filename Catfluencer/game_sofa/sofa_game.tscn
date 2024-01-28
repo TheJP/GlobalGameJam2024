@@ -52,7 +52,7 @@ show_chat = false
 metadata/_edit_lock_ = true
 
 [node name="Slider" parent="." instance=ExtResource("3_8r1t7")]
-position = Vector2(1011, 957)
+position = Vector2(764, 953)
 
 [node name="Couch" type="StaticBody2D" parent="."]
 position = Vector2(1017, 730)
