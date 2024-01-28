@@ -35,6 +35,7 @@ const NAME_PARTS = [
 var chat_lines: int = 11
 var chat: Array[String] = []
 var chatters: Array[String] = []
+@onready var _is_web = OS.get_name() == "Web"
 
 
 func _ready():
@@ -67,9 +68,9 @@ func generate_name():
 
 
 func generate_message():
-	if randf() < 0.6:
+	if not _is_web and randf() < 0.6:
 		return CHAT_EMOJIS[randi() % len(CHAT_EMOJIS)].repeat(randi_range(1, 3))
-	
+
 	var meows = []
 	while true:
 		var es = 1

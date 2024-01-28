@@ -232,6 +232,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/ControlsContainer/GridContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -247,7 +248,6 @@ mouse_filter = 2
 
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
 unique_name_in_owner = true
-process_mode = 3
 visible = false
 layout_mode = 2
 size_flags_vertical = 4
