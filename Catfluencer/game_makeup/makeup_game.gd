@@ -53,6 +53,7 @@ func _input(event):
 			await get_tree().create_timer(2.0).timeout
 			Level.display_message("Awesome\nLook!")
 			Level.finished_level(true)
+			Reactions.bad_makeup()
 			return
 
 

@@ -17,10 +17,10 @@ layer = 2
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 230
+theme_override_constants/margin_right = 450
+theme_override_constants/margin_bottom = 90
 
 [node name="VBoxContainerRoles" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2

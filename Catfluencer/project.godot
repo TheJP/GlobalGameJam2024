@@ -22,7 +22,8 @@ run/size/viewport_width=1920
 
 ReferenceSize="*res://singleton/reference_size.gd"
 Level="*res://singleton/level.gd"
-ChatGlobal="*res://chat_global.gd"
+ChatGlobal="*res://singleton/chat_global.gd"
+Reactions="*res://singleton/reactions.gd"
 
 [display]
 

@@ -342,7 +342,6 @@ texture = ExtResource("36_w58e0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Food15"]
 position = Vector2(36.686, -0.913879)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ygqxq")
 
 [node name="Diarrhea" type="Sprite2D" parent="."]

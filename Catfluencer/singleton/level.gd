@@ -41,6 +41,10 @@ func start():
 
 func finished_level(success: bool, should_sleep = true):
 	_timed_level = false
+	if success:
+		Reactions.win()
+	else:
+		Reactions.lose()
 
 	if should_sleep:
 		await get_tree().create_timer(1.0, false).timeout

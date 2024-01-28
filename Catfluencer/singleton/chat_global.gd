@@ -32,7 +32,7 @@ const NAME_PARTS = [
 	"nana",
 	"sion",
 ]
-var chat_lines: int = 8
+var chat_lines: int = 11
 var chat: Array[String] = []
 var chatters: Array[String] = []
 
@@ -54,7 +54,7 @@ func generate_chatters():
 
 
 func add_chat():
-	await get_tree().create_timer(randf_range(0.5, 5.0), false).timeout
+	await get_tree().create_timer(randf_range(0.2, 4.0), false).timeout
 	chat.push_back("%s: %s" % [generate_name(), generate_message()])
 	while len(chat) > chat_lines:
 		chat.pop_front()

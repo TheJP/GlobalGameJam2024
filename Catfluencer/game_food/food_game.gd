@@ -29,6 +29,7 @@ func _on_consume_food(food, is_good):
 		#Level.display_message("Diarrhea")
 		$Diarrhea.visible = true
 		Level.finished_level(false)
+		Reactions.diarrhea()
 		return
 
 	#food.get_node("Sprite2D").visible = false
