@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxkd3gaylit6d"]
+
+[ext_resource type="Script" path="res://victory/victory.gd" id="1_lvupt"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_pp6l2"]
+[ext_resource type="Texture2D" uid="uid://70sawjdb88tt" path="res://victory/Victory_Titel.png" id="3_m71hn"]
+[ext_resource type="Texture2D" uid="uid://bhyejex663hb" path="res://victory/Victory_Text.png" id="4_7umn4"]
+[ext_resource type="Texture2D" uid="uid://tqtmih3vw003" path="res://victory/Victory_Button_Base.png" id="5_v1ec6"]
+[ext_resource type="Texture2D" uid="uid://clcrd50wb4grr" path="res://victory/Victory_Button_Hover.png" id="6_1p8o3"]
+[ext_resource type="Texture2D" uid="uid://dy46vln0y8wac" path="res://game_unpacking/background.png" id="7_6pvir"]
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_lvupt")
+
+[node name="Common" parent="." instance=ExtResource("2_pp6l2")]
+show_viewer_count = false
+show_chat = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 170
+theme_override_constants/margin_right = 450
+theme_override_constants/margin_bottom = 90
+
+[node name="VBoxContainerMain" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Victory"
+horizontal_alignment = 1
+
+[node name="CreditsNames" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "You've become the
+Ultimate Catfluencer"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = " Credits "
+
+[node name="VBoxContainerMain2" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainerMain2"]
+layout_mode = 2
+texture = ExtResource("3_m71hn")
+stretch_mode = 3
+
+[node name="Credits" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainerMain2"]
+layout_mode = 2
+texture = ExtResource("4_7umn4")
+stretch_mode = 3
+
+[node name="CreditsButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainerMain2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_v1ec6")
+texture_hover = ExtResource("6_1p8o3")
+
+[node name="CanvasLayerBackground" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerBackground"]
+offset_left = -201.0
+offset_top = 12.0
+offset_right = 1734.0
+offset_bottom = 1139.0
+mouse_filter = 2
+texture = ExtResource("7_6pvir")
+expand_mode = 1
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainerMain/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainerMain2/CreditsButton" to="." method="_on_button_pressed"]

@@ -156,6 +156,7 @@ text_overrun_behavior = 4
 script = ExtResource("2_u8lnv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -230,6 +231,7 @@ mouse_filter = 2
 
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer/ControlsContainer/GridContainer/GridContainer"]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 layout_mode = 2
 size_flags_vertical = 4
@@ -300,10 +302,12 @@ offset_left = 40.0
 offset_top = 164.0
 offset_right = 1476.0
 offset_bottom = 1000.0
+mouse_filter = 2
 
 [node name="PanelContainer" type="Control" parent="CanvasLayer/PauseMenu"]
 custom_minimum_size = Vector2(512, 504)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="CanvasLayer/PauseMenu/PanelContainer"]
 layout_mode = 2

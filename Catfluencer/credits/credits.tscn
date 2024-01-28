@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://da02cyicdei01"]
+
+[ext_resource type="Script" path="res://credits/credits.gd" id="1_tgq07"]
+[ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_rhjy3"]
+[ext_resource type="Texture2D" uid="uid://bl58u6gyb5ln2" path="res://credits/Credits_Titel.png" id="3_cu3so"]
+[ext_resource type="Texture2D" uid="uid://56phco7x6lvd" path="res://credits/Credits_Text.png" id="4_s5mqi"]
+[ext_resource type="Texture2D" uid="uid://cblnvwfcobdt1" path="res://credits/Credits_Button_Base.png" id="5_wvvut"]
+[ext_resource type="Texture2D" uid="uid://bld2s5cm00nxh" path="res://credits/Credits_Button_Hover.png" id="6_tv3md"]
+[ext_resource type="Texture2D" uid="uid://dy46vln0y8wac" path="res://game_unpacking/background.png" id="7_dh3yx"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_tgq07")
+
+[node name="Common" parent="." instance=ExtResource("2_rhjy3")]
+show_viewer_count = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 230
+theme_override_constants/margin_right = 450
+theme_override_constants/margin_bottom = 90
+
+[node name="VBoxContainerMain" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
+layout_mode = 2
+texture = ExtResource("3_cu3so")
+stretch_mode = 3
+
+[node name="Credits" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_s5mqi")
+stretch_mode = 3
+
+[node name="HomeButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_wvvut")
+texture_hover = ExtResource("6_tv3md")
+
+[node name="CanvasLayerBackground" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerBackground"]
+offset_left = -201.0
+offset_top = 12.0
+offset_right = 1734.0
+offset_bottom = 1139.0
+mouse_filter = 2
+texture = ExtResource("7_dh3yx")
+expand_mode = 1
+
+[node name="JammersButton" type="TextureButton" parent="CanvasLayerBackground"]
+offset_left = 611.0
+offset_top = 730.0
+offset_right = 914.0
+offset_bottom = 796.0
+mouse_default_cursor_shape = 2
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainerMain/HomeButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayerBackground/JammersButton" to="." method="_on_jammers_button_pressed"]

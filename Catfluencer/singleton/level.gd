@@ -16,8 +16,8 @@ const _levels = [
 	preload("res://game_food/food_game.tscn"),
 	preload("res://game_unpacking/unpacking_game.tscn"),
 	preload("res://game_makeup/makeup_game.tscn"),
-	preload("res://victory.tscn"),
-	preload("res://credits.tscn"),
+	preload("res://victory/victory.tscn"),
+	preload("res://credits/credits.tscn"),
 ]
 
 
