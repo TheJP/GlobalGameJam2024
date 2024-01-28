@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cupijoe2d3fbc"]
+[gd_scene load_steps=7 format=3 uid="uid://cupijoe2d3fbc"]
 
 [ext_resource type="Script" path="res://game_makeup/makeup_game.gd" id="1_n2ld7"]
 [ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_kh5if"]
 [ext_resource type="PackedScene" uid="uid://et1yihmtt1b4" path="res://game_makeup/makeup.tscn" id="3_mcoam"]
 [ext_resource type="Script" path="res://game_makeup/canvas.gd" id="4_ocf7a"]
 [ext_resource type="Texture2D" uid="uid://db2xwychf7vev" path="res://game_makeup/makeup_head.png" id="5_e7rq7"]
+[ext_resource type="Texture2D" uid="uid://b4ydhi0g72hla" path="res://game_makeup/text_slay.png" id="6_48mvr"]
 
 [node name="MakeupGame" type="Node2D"]
 script = ExtResource("1_n2ld7")
@@ -46,6 +47,14 @@ z_index = 1
 position = Vector2(-49, 521)
 scale = Vector2(0.741379, 0.709647)
 texture = ExtResource("5_e7rq7")
+
+[node name="Slay" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(775, 572)
+rotation = -0.572196
+scale = Vector2(0.879672, 0.879672)
+texture = ExtResource("6_48mvr")
 
 [connection signal="mouse_entered" from="CatHead" to="." method="_on_cat_head_mouse_entered"]
 [connection signal="mouse_exited" from="CatHead" to="." method="_on_cat_head_mouse_exited"]

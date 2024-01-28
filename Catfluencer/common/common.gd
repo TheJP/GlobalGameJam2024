@@ -25,6 +25,7 @@ func _ready():
 	%OnlineBackground.visible = show_webcam
 	%Emotion.visible = show_webcam
 	%Mic.visible = show_webcam
+	Level.show_boring.connect(func(): $Boring.visible = true)
 
 
 func _process(delta):

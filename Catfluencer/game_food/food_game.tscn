@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://d0yxynejjnm7n"]
+[gd_scene load_steps=51 format=3 uid="uid://d0yxynejjnm7n"]
 
 [ext_resource type="Script" path="res://game_food/food_game.gd" id="1_71j51"]
 [ext_resource type="PackedScene" uid="uid://ctg8mwg4vby5g" path="res://game_food/food.tscn" id="2_ae48x"]
@@ -36,7 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://cciyfftcsuwv6" path="res://game_food/food_14_eaten.png" id="34_trkvc"]
 [ext_resource type="Texture2D" uid="uid://bk3gc3w1daxdd" path="res://game_food/food_15.png" id="35_4inyk"]
 [ext_resource type="Texture2D" uid="uid://dfhoys7s06vx0" path="res://game_food/food_15_eaten.png" id="36_w58e0"]
-[ext_resource type="Texture2D" uid="uid://do68chhrs0arb" path="res://game_food/diarrhea.png" id="37_m306g"]
+[ext_resource type="Texture2D" uid="uid://do68chhrs0arb" path="res://game_food/text_diarrhea.png" id="37_qybid"]
+[ext_resource type="Texture2D" uid="uid://dggtj0gk82u71" path="res://game_food/text_yummy.png" id="38_pxrcy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwo22"]
 animations = [{
@@ -350,7 +351,15 @@ z_index = 2
 position = Vector2(741, 673)
 rotation = 0.23911
 scale = Vector2(0.579655, 0.579655)
-texture = ExtResource("37_m306g")
+texture = ExtResource("37_qybid")
+
+[node name="Yummy" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(755, 721)
+rotation = 0.23911
+scale = Vector2(0.879672, 0.879672)
+texture = ExtResource("38_pxrcy")
 
 [editable path="Food"]
 [editable path="Food2"]

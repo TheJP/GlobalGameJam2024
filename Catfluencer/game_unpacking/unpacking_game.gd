@@ -13,7 +13,7 @@ func _ready():
 
 
 func _on_package_destroyed_content(package):
-	Level.display_message("Gadgets\nDamaged! D:")
+	$Damaged.visible = true
 	Level.finished_level(false)
 	disable_packages()
 
@@ -21,7 +21,7 @@ func _on_package_destroyed_content(package):
 func _on_package_finished_package(package):
 	_package_count -= 1
 	if _package_count <= 0:
-		Level.display_message("Yay :3")
+		$Success.visible = true
 		Level.finished_level(true)
 		disable_packages()
 

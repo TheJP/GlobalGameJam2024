@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://uppfr5glg0qf"]
+[gd_scene load_steps=15 format=3 uid="uid://uppfr5glg0qf"]
 
 [ext_resource type="Script" path="res://game_sofa/sofa_game.gd" id="1_6cs1u"]
 [ext_resource type="PackedScene" uid="uid://bpa1aakkr0shm" path="res://common/common.tscn" id="2_pgvyi"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c5ql724ujls8h" path="res://game_sofa/cat_sit.png" id="6_4bgto"]
 [ext_resource type="Texture2D" uid="uid://bbayv21uh5h5t" path="res://game_sofa/background.png" id="7_67krr"]
 [ext_resource type="Texture2D" uid="uid://bwuye5fkse8rn" path="res://game_sofa/cat_sit_2.png" id="7_w2sbv"]
+[ext_resource type="Texture2D" uid="uid://bgjnw25lt5gjx" path="res://game_sofa/text_funny.png" id="9_wypsm"]
+[ext_resource type="Texture2D" uid="uid://co3ru5khr34un" path="res://game_sofa/text_not_funny.png" id="10_sdtcr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_25qgs"]
 animations = [{
@@ -99,6 +101,22 @@ z_index = -1
 position = Vector2(758.5, 582.5)
 scale = Vector2(0.586052, 0.547059)
 texture = ExtResource("7_67krr")
+
+[node name="Funny" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(793, 413)
+rotation = 0.23911
+scale = Vector2(0.879672, 0.879672)
+texture = ExtResource("9_wypsm")
+
+[node name="NotFunny" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1095, 467)
+rotation = 0.23911
+scale = Vector2(0.714862, 0.714862)
+texture = ExtResource("10_sdtcr")
 
 [connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
 [connection signal="body_entered" from="Cat" to="." method="_on_cat_body_entered"]

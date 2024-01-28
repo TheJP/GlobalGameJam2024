@@ -1,6 +1,9 @@
 extends Node
 
 
+signal show_boring()
+
+
 var remaining_time: float = 0
 var _timed_level: bool = false
 var _regular_flow = false
@@ -24,7 +27,7 @@ func _process(delta):
 
 	if remaining_time <= delta:
 		remaining_time = 0
-		display_message("Too Boring")
+		show_boring.emit()
 		finished_level(false)
 		_timeout_callback.call()
 		return

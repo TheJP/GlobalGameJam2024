@@ -26,7 +26,6 @@ func _process(delta):
 func _on_consume_food(food, is_good):
 	_last_eaten = 0
 	if not is_good:
-		#Level.display_message("Diarrhea")
 		$Diarrhea.visible = true
 		Level.finished_level(false)
 		Reactions.diarrhea()
@@ -36,7 +35,7 @@ func _on_consume_food(food, is_good):
 	good_food_count -= 1
 	
 	if good_food_count <= 0:
-		Level.display_message("Yummy!")
+		$Yummy.visible = true
 		Level.finished_level(true)
 
 

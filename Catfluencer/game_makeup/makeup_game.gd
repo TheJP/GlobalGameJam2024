@@ -51,7 +51,7 @@ func _input(event):
 			Level.stop_timer()
 			disable_makeups()
 			await get_tree().create_timer(2.0).timeout
-			Level.display_message("Awesome\nLook!")
+			$Slay.visible = true
 			Level.finished_level(true)
 			Reactions.bad_makeup()
 			return

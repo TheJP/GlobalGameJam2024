@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpa1aakkr0shm"]
+[gd_scene load_steps=12 format=3 uid="uid://bpa1aakkr0shm"]
 
 [ext_resource type="Script" path="res://common/common.gd" id="1_3lbf3"]
 [ext_resource type="Texture2D" uid="uid://7bgulp21q120" path="res://common/cam_background.png" id="2_65rlq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6us8aunafgkk" path="res://common/reaction_neutral .png" id="4_u40u2"]
 [ext_resource type="Texture2D" uid="uid://doo48phm3bs7p" path="res://common/reaction_micro.png" id="5_0yepu"]
 [ext_resource type="Texture2D" uid="uid://dgw35o10popco" path="res://common/foreground.png" id="5_xgwyp"]
+[ext_resource type="Texture2D" uid="uid://dwm4i305b7ml3" path="res://common/text_boring.png" id="10_vptwh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwo7b"]
 texture = ExtResource("3_b551k")
@@ -133,3 +134,11 @@ z_index = 50
 texture = ExtResource("5_xgwyp")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="Boring" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(758, 596)
+rotation = 0.418879
+scale = Vector2(1.09411, 1.09411)
+texture = ExtResource("10_vptwh")
