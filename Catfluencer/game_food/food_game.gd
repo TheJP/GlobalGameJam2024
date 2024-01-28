@@ -33,7 +33,7 @@ func _on_consume_food(food, is_good):
 
 	#food.get_node("Sprite2D").visible = false
 	good_food_count -= 1
-	
+
 	if good_food_count <= 0:
 		$Yummy.visible = true
 		Level.finished_level(true)

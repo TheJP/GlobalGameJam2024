@@ -13,8 +13,6 @@
 script = ExtResource("1_1d0dx")
 
 [node name="Common" parent="." instance=ExtResource("2_vpgsf")]
-neutral_sounds = Array[AudioStream]([])
-sad_sounds = Array[AudioStream]([])
 
 [node name="Package" parent="." instance=ExtResource("2_e0cu1")]
 position = Vector2(738, 399)

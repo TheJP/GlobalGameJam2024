@@ -46,6 +46,7 @@ stretch_mode = 3
 [node name="HomeButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainerMain"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_wvvut")
 texture_hover = ExtResource("6_tv3md")
 
