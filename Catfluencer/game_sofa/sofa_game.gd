@@ -30,6 +30,9 @@ func _input(event):
 
 func _ready():
 	_couch_origin = $Couch.position
+	if Time.get_ticks_msec() > 10000:
+		%HintButton.visible = true
+	create_tween().tween_callback(func(): %HintButton.visible = true).set_delay(10.0)
 
 
 func _on_slider_value_changed(new_value):
@@ -52,3 +55,11 @@ func _on_cat_body_entered(body):
 		$Cat/AnimatedSprite2D.animation = "sit"
 		$Cat/CollisionShape2DSit.set_deferred("disabled", false)
 		$Cat/CollisionShape2DJump.set_deferred("disabled", true)
+
+
+func _on_hint_button_mouse_entered():
+	%Hint.visible = true
+
+
+func _on_hint_button_mouse_exited():
+	%Hint.visible = false
