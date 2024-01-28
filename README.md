@@ -2,8 +2,6 @@
 
 ![Image](thumbnail.png)
 
-<iframe frameborder="0" src="https://itch.io/embed/2497574?bg_color=b0c9f0&amp;link_color=d9707d" width="552" height="167"><a href="https://thejp.itch.io/catfluencer">Catfluencer by TheJP, Max</a></iframe>
-
 Play Online: <https://thejp.itch.io/catfluencer>
 
 Download: <https://github.com/TheJP/GlobalGameJam2024/releases>
