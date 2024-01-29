@@ -31,6 +31,18 @@ const NAME_PARTS = [
 	"lurba",
 	"nana",
 	"sion",
+	"max",
+	"janis",
+	"meret",
+	"pablo",
+]
+const RARE_LINES = [
+	"Anna Rosenwasser: hoi büüüsi!",
+	"PewDiePie: How did this get more followers than me!?",
+	"Ninja: wanna collab?",
+	"Dream: play minecraft next!!",
+	"MrBeast: Keep this stream live for 100 days and I will donate $500.000",
+	"Anthony Padilla: can I interview you on my show?"
 ]
 var chat_lines: int = 11
 var chat: Array[String] = []
@@ -56,18 +68,25 @@ func generate_chatters():
 
 func add_chat():
 	await get_tree().create_timer(randf_range(0.2, 4.0), false).timeout
-	chat.push_back("%s: %s" % [generate_name(), generate_message()])
+	chat.push_back(generate_chat_line())
 	while len(chat) > chat_lines:
 		chat.pop_front()
 	chat_changed.emit()
 	add_chat()
 
 
-func generate_name():
+func generate_chat_line() -> String:
+	if randf() <= 0.01:
+		return RARE_LINES[randi() % len(RARE_LINES)]
+	else:
+		return "%s: %s" % [generate_name(), generate_message()]
+
+
+func generate_name() -> String:
 	return chatters[randi() % len(chatters)]
 
 
-func generate_message():
+func generate_message() -> String:
 	if not _is_web and randf() < 0.6:
 		return CHAT_EMOJIS[randi() % len(CHAT_EMOJIS)].repeat(randi_range(1, 3))
 
