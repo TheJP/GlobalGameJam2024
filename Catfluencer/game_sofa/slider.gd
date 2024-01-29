@@ -9,9 +9,11 @@ var value: float = 0
 var max_value: float = 1
 var _left: Vector2
 var _right: Vector2
-var _mouse_inside: bool = false
+var _hover_grabber: bool = false
+var _hover_bar: bool = false
 var _dragging: bool = false
 var _drag_origin: float
+var _modulate_grabber: Color = Color.hex(0xe18aa5ff)
 
 
 func _ready():
@@ -29,40 +31,47 @@ func _input(event):
 		if event.button_index != MOUSE_BUTTON_LEFT:
 			return
 
-		if event.pressed and _mouse_inside:
+		if event.pressed and _hover_grabber:
 			_dragging = true
 			_drag_origin = event.position.x - $Grabber.position.x
+		elif event.pressed and _hover_bar:
+			_dragging = true
+			_drag_origin = position.x
+			_update_grabber_position(event.position.x - position.x)
 
 		if not event.pressed:
 			_dragging = false
 
 	if event is InputEventMouseMotion:
-		if not _dragging:
-			return
-
-		var new_unbound = event.position.x - _drag_origin
-		var new_bound = clamp(new_unbound, _left.x, _right.x)
-		$Grabber.position.x = new_bound
-		value = (new_bound - _left.x) / (_right.x - _left.x) * max_value
-		value_changed.emit(value)
+		if _dragging:
+			_update_grabber_position(event.position.x - _drag_origin)
 
 
-#func fit_into(new_position: Vector2, new_size: Vector2):
-	#var minSide = minf(new_size.x, new_size.y)
-	#var minSize = Vector2(minSide, minSide)
-	#_left = new_position + 0.5 * minSize;
-	#_right = new_position + new_size - 0.5 * minSize
-	#$Grabber.global_scale = minSize
-	#$Grabber.global_position = _left.lerp(_right, value / max_value)
-	#$Background.global_scale = new_size
-	#$Background.global_position = new_position
+func _update_grabber_position(new_unbound: float):
+	var new_bound = clamp(new_unbound, _left.x, _right.x)
+	$Grabber.position.x = new_bound
+	value = (new_bound - _left.x) / (_right.x - _left.x) * max_value
+	value_changed.emit(value)
 
 
 func _on_grabber_mouse_entered():
-	_mouse_inside = true
-	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	_hover_grabber = true
 
 
 func _on_grabber_mouse_exited():
-	_mouse_inside = false
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	_hover_grabber = false
+
+
+func _on_slider_bar_mouse_entered():
+	_hover_bar = true
+
+
+func _on_slider_bar_mouse_exited():
+	_hover_bar = false
+
+
+func _update_hover_state():
+	if _hover_grabber or _hover_bar:
+		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	else:
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
