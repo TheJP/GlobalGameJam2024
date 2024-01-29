@@ -19,7 +19,6 @@ show_chat = false
 layer = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-modulate = Color(0.85098, 0.439216, 0.490196, 1)
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0

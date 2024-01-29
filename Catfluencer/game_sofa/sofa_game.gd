@@ -19,6 +19,7 @@ func _input(event):
 		$Cat/CollisionShape2DJump.set_deferred("disabled", false)
 		$Cat/AnimatedSprite2D.animation = "jump"
 		$Cat.apply_impulse(Vector2(250, -1200))
+		Audio.play_neutral_sound()
 		print("jump value: ", $Slider.value)
 
 		await get_tree().create_timer(2.0, false).timeout

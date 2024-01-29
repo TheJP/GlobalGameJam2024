@@ -30,20 +30,22 @@ func _process(delta):
 
 
 func win():
-	current = _win_emotions[randi() % len(_win_emotions)]
-	_reset_after = REACTION_AFTER_GAME
+	show_emotion(_win_emotions[randi() % len(_win_emotions)], REACTION_AFTER_GAME)
 
 
 func lose():
-	current = _lose_emotions[randi() % len(_lose_emotions)]
-	_reset_after = REACTION_AFTER_GAME
+	show_emotion(_lose_emotions[randi() % len(_lose_emotions)], REACTION_AFTER_GAME)
 
 
 func diarrhea():
-	current = Emotion.Tongue
-	_reset_after = REACTION_AFTER_GAME
+	show_emotion(Emotion.Tongue, REACTION_AFTER_GAME)
 
 
 func bad_makeup():
-	current = Emotion.Huh
-	_reset_after = REACTION_AFTER_GAME
+	show_emotion(Emotion.Huh, REACTION_AFTER_GAME)
+
+
+## if duration is 0, the emotion will be shown indefinitely
+func show_emotion(emotion: Emotion, duration: float = 0):
+	current = emotion
+	_reset_after = duration

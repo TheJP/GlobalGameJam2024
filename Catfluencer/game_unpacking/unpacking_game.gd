@@ -1,10 +1,11 @@
 extends Node2D
 
+
 var _package_count: int = 0
 
 
 func _ready():
-	Level.start_timer(6.0, disable_packages)
+	Level.start_timer(8.0, disable_packages)
 	var packages = get_tree().get_nodes_in_group("package")
 	_package_count = len(packages)
 	for package in packages:
@@ -24,6 +25,9 @@ func _on_package_finished_package(package):
 		$Success.visible = true
 		Level.finished_level(true)
 		disable_packages()
+	else:
+		Reactions.show_emotion(Reactions.Emotion.Shook, 1.0)
+		Audio.play_neutral_sound()
 
 
 func disable_packages():

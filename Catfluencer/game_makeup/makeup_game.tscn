@@ -36,164 +36,164 @@ script = ExtResource("1_n2ld7")
 
 [node name="Common" parent="." instance=ExtResource("2_kh5if")]
 
-[node name="Makeup" parent="." instance=ExtResource("3_mcoam")]
+[node name="ColourBlue" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1228, 763)
 scale = Vector2(0.5, 0.5)
 line_width = 60.0
 colour = Color(0.65098, 0.72549, 0.976471, 0.329412)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColourBlue"]
 z_index = 1
 rotation = 1.33169
 shape = SubResource("CapsuleShape2D_xs31q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup"]
+[node name="Sprite2D" type="Sprite2D" parent="ColourBlue"]
 texture = ExtResource("4_3bm2e")
 
-[node name="Makeup2" parent="." instance=ExtResource("3_mcoam")]
+[node name="ColourYellow" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1316, 753)
 scale = Vector2(0.5, 0.5)
 line_width = 60.0
 colour = Color(1, 0.698039, 0.486275, 0.337255)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColourYellow"]
 z_index = 1
 rotation = 1.33169
 shape = SubResource("CapsuleShape2D_xs31q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup2"]
+[node name="Sprite2D" type="Sprite2D" parent="ColourYellow"]
 texture = ExtResource("5_jdyqd")
 
-[node name="Makeup3" parent="." instance=ExtResource("3_mcoam")]
+[node name="ColourPurple" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1350, 801)
 scale = Vector2(0.5, 0.5)
 line_width = 60.0
 colour = Color(0.541176, 0.396078, 0.537255, 0.356863)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColourPurple"]
 z_index = 1
 rotation = 1.33169
 shape = SubResource("CapsuleShape2D_xs31q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup3"]
+[node name="Sprite2D" type="Sprite2D" parent="ColourPurple"]
 texture = ExtResource("6_cogxo")
 
-[node name="Makeup4" parent="." instance=ExtResource("3_mcoam")]
+[node name="ColourRose" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1262, 813)
 scale = Vector2(0.5, 0.5)
 line_width = 60.0
 colour = Color(0.941176, 0.694118, 0.941176, 0.431373)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColourRose"]
 z_index = 1
 rotation = 1.33169
 shape = SubResource("CapsuleShape2D_xs31q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup4"]
+[node name="Sprite2D" type="Sprite2D" parent="ColourRose"]
 texture = ExtResource("7_58xdi")
 
-[node name="Makeup5" parent="." instance=ExtResource("3_mcoam")]
+[node name="LipstickPink" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(289, 843)
 scale = Vector2(0.5, 0.5)
 type = 1
-line_width = 14.0
+line_width = 25.0
 colour = Color(0.992157, 0.415686, 0.741176, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LipstickPink"]
 z_index = 1
 shape = SubResource("CapsuleShape2D_au4j1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup5"]
+[node name="Sprite2D" type="Sprite2D" parent="LipstickPink"]
 texture = ExtResource("8_1euei")
 
-[node name="Makeup6" parent="." instance=ExtResource("3_mcoam")]
+[node name="LipstickRed" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(192, 826)
 scale = Vector2(0.5, 0.5)
 type = 1
-line_width = 14.0
+line_width = 25.0
 colour = Color(0.803922, 0.160784, 0.160784, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LipstickRed"]
 z_index = 1
 shape = SubResource("CapsuleShape2D_au4j1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup6"]
+[node name="Sprite2D" type="Sprite2D" parent="LipstickRed"]
 texture = ExtResource("9_27vf0")
 
-[node name="Makeup7" parent="." instance=ExtResource("3_mcoam")]
+[node name="LipstickPurple" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(384, 853)
 scale = Vector2(0.5, 0.5)
 type = 1
-line_width = 14.0
+line_width = 25.0
 colour = Color(0.505882, 0.423529, 0.788235, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LipstickPurple"]
 z_index = 1
 shape = SubResource("CapsuleShape2D_au4j1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup7"]
+[node name="Sprite2D" type="Sprite2D" parent="LipstickPurple"]
 texture = ExtResource("10_2gqkg")
 
-[node name="Makeup8" parent="." instance=ExtResource("3_mcoam")]
+[node name="LipstickGreen" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(93, 807)
 scale = Vector2(0.5, 0.5)
 type = 1
-line_width = 14.0
+line_width = 25.0
 colour = Color(0.0117647, 0.321569, 0.121569, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LipstickGreen"]
 z_index = 1
 shape = SubResource("CapsuleShape2D_au4j1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup8"]
+[node name="Sprite2D" type="Sprite2D" parent="LipstickGreen"]
 texture = ExtResource("11_0yvsd")
 
-[node name="Makeup9" parent="." instance=ExtResource("3_mcoam")]
+[node name="EyelinerBlack" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1298, 966)
 scale = Vector2(0.5, 0.5)
 type = 2
 line_width = 8.0
 colour = Color(0.00784314, 0.00784314, 0.00784314, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EyelinerBlack"]
 z_index = 1
 position = Vector2(6, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_200nf")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup9"]
+[node name="Sprite2D" type="Sprite2D" parent="EyelinerBlack"]
 texture = ExtResource("12_nelx2")
 
-[node name="Makeup10" parent="." instance=ExtResource("3_mcoam")]
+[node name="EyelinerBlue" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1272, 935)
 scale = Vector2(0.5, 0.5)
 type = 2
 line_width = 8.0
 colour = Color(0.129412, 0.00392157, 0.866667, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EyelinerBlue"]
 z_index = 1
 position = Vector2(6, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_200nf")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup10"]
+[node name="Sprite2D" type="Sprite2D" parent="EyelinerBlue"]
 texture = ExtResource("13_uk34k")
 
-[node name="Makeup11" parent="." instance=ExtResource("3_mcoam")]
+[node name="EyelinerRed" parent="." instance=ExtResource("3_mcoam")]
 position = Vector2(1253, 901)
 scale = Vector2(0.5, 0.5)
 type = 2
 line_width = 8.0
 colour = Color(0.262745, 0.0235294, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Makeup11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EyelinerRed"]
 z_index = 1
 position = Vector2(6, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_200nf")
 
-[node name="Sprite2D" type="Sprite2D" parent="Makeup11"]
+[node name="Sprite2D" type="Sprite2D" parent="EyelinerRed"]
 texture = ExtResource("14_8q8b0")
 
 [node name="Canvas" type="Node2D" parent="."]
