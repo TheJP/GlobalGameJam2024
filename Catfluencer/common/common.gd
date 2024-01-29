@@ -7,6 +7,7 @@ extends Node2D
 @export var show_controls: bool = true
 @export var neutral_sounds: Array[AudioStream] = []
 @export var sad_sounds: Array[AudioStream] = []
+@export var all_sounds: Array[AudioStream] = []
 
 
 var emotion_textures = {
@@ -35,6 +36,7 @@ func _ready():
 	Level.show_boring.connect(func(): $Boring.visible = true)
 	Audio.on_play_neutral_sound.connect(play_neutral_sound)
 	Audio.on_play_sad_sound.connect(play_sad_sound)
+	Audio.on_play_any_sound.connect(play_any_sound)
 
 
 func _process(delta):
@@ -56,6 +58,7 @@ func _on_resume_button_pressed():
 
 func _on_close_button_pressed():
 	unpause()
+
 
 func _on_restart_button_pressed():
 	get_tree().paused = false
@@ -81,13 +84,21 @@ func unpause():
 
 
 func play_neutral_sound(player: AudioStreamPlayer):
-	player.stream = neutral_sounds[randi() % len(neutral_sounds)]
-	player.play()
+	if len(neutral_sounds) > 0:
+		player.stream = neutral_sounds[randi() % len(neutral_sounds)]
+		player.play()
 
 
 func play_sad_sound(player: AudioStreamPlayer):
-	player.stream = sad_sounds[randi() % len(sad_sounds)]
-	player.play()
+	if len(sad_sounds) > 0:
+		player.stream = sad_sounds[randi() % len(sad_sounds)]
+		player.play()
+
+
+func play_any_sound(player: AudioStreamPlayer):
+	if len(all_sounds) > 0:
+		player.stream = all_sounds[randi() % len(all_sounds)]
+		player.play()
 
 
 func _on_speaker_button_pressed():

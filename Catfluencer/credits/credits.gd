@@ -6,4 +6,4 @@ func _on_button_pressed():
 
 
 func _on_jammers_button_pressed():
-	Audio.play_neutral_sound()
+	Audio.play_any_sound()

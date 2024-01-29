@@ -3,6 +3,7 @@ extends Node
 
 signal on_play_sad_sound()
 signal on_play_neutral_sound()
+signal on_play_any_sound()
 
 
 var player: AudioStreamPlayer
@@ -20,6 +21,10 @@ func play_sad_sound():
 
 func play_neutral_sound():
 	on_play_neutral_sound.emit(player)
+
+
+func play_any_sound():
+	on_play_any_sound.emit(player)
 
 
 func set_mute(value: bool):
